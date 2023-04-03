@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    // dependency versions
+    ext.kotlin_version = '1.5.0'
+    ext.gradle_kotlin_version = '1.5.0'
+    ext.saxon_he_version = '11.3'
+    ext.xerces_version = '2.12.2'
+    ext.rgxgen_version = '1.3'
+    ext.kotlinx_coroutine_version = '1.6.4'
+    ext.appcompat_version = '1.4.2'
+    ext.material_version = '1.6.1'
+    ext.junit_version = '4.13.2'
+    ext.androidx_junit_version = '1.1.3'
+    ext.androidx_test_runner_version = '1.4.0'
+    ext.espresso_version = '3.4.0'
+    ext.mockito_core_version = '4.4.0'
+    ext.mockito_kotlin_version = '4.0.0'
+    ext.roboelectric_version = '4.8'
+    ext.log4j_version = '2.18.0'
+    ext.guava_version = '28.2-android'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${gradle_kotlin_version}"
+        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath 'com.github.kezong:fat-aar:1.3.8'
+    }
+}
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version "${gradle_kotlin_version}" apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.5.0' apply false
+    id 'com.jaredsburrows.license' version '0.9.0' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

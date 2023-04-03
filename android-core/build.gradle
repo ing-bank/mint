@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    packagingOptions.resources.merges += "**/META-INF/DEPENDENCIES"
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation(project(":core"))
+
+    implementation "androidx.core:core-ktx:${kotlin_version}"
+    implementation "net.sf.saxon:Saxon-HE:${saxon_he_version}"
+    implementation "xerces:xercesImpl:${xerces_version}"
+    implementation "com.github.curious-odd-man:rgxgen:${rgxgen_version}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinx_coroutine_version}"
+    implementation "androidx.appcompat:appcompat:${appcompat_version}"
+    implementation "com.google.android.material:material:${material_version}"
+    implementation 'androidx.test:monitor:1.5.0'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+
+    testImplementation "junit:junit:${junit_version}"
+    testImplementation "org.mockito:mockito-core:${mockito_core_version}"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:${mockito_kotlin_version}"
+    testImplementation  "pl.pragmatists:JUnitParams:1.1.1"
+
+    androidTestImplementation "androidx.test.ext:junit:${androidx_junit_version}"
+    androidTestImplementation "androidx.test:runner:${androidx_test_runner_version}"
+}
+
+// start of hack
+// sadly we need to copy this AAR to the libs dir of the tooling project, because of this limitation:
+// https://discuss.gradle.org/t/how-can-i-generate-both-android-and-pure-java-libraries-from-a-single-code-base/31093/2
+
+// ../../android-core/build/intermediates/aar_main_jar/debug/classes.jar
+task copyJarDebug(type: Copy) {
+    from    ( [buildDir.absolutePath, 'intermediates', 'aar_main_jar', 'debug'].join(File.separator) )
+    include ( "classes.jar" )
+    into    ( [project.rootProject.projectDir, 'tooling', 'libs'].join(File.separator) )
+    rename  ( "classes.jar", "${project.name}.jar")
+}
+task copyJar(type: Copy) {
+    from    ( [buildDir.absolutePath, 'intermediates', 'aar_main_jar', 'release'].join(File.separator) )
+    include ( "classes.jar" )
+    into    ( [project.rootProject.projectDir, 'tooling', 'libs'].join(File.separator) )
+    rename  ( "classes.jar", "${project.name}.jar")
+}
+afterEvaluate {
+    bundleDebugAar.finalizedBy('copyJarDebug')
+    bundleReleaseAar.finalizedBy('copyJar')
+}
+// end of hack

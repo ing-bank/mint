@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+rootProject.name = "org.mint.android"
+include ':core'
+include ':android-core'
+include ':espresso-runner'
+include ':integration-test-runner'
+include ':api'
+include ':tooling'
+include ':app'
