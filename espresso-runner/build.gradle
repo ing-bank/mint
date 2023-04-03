@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    kotlinOptions {
+    }
+}
+
+dependencies {
+    implementation(project(":core"))
+    implementation(project(":android-core"))
+
+    implementation "androidx.core:core-ktx:${kotlin_version}"
+    implementation "net.sf.saxon:Saxon-HE:${saxon_he_version}"
+    implementation "xerces:xercesImpl:${xerces_version}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinx_coroutine_version}"
+    implementation "androidx.appcompat:appcompat:${appcompat_version}"
+    implementation "com.google.android.material:material:${material_version}"
+    implementation "androidx.test.espresso:espresso-contrib:${espresso_version}"
+    implementation "androidx.test.espresso:espresso-intents:${espresso_version}"
+    implementation "androidx.test.espresso:espresso-core:${espresso_version}"
+    implementation "com.google.guava:guava:${guava_version}"
+
+    testImplementation "junit:junit:${junit_version}"
+    testImplementation "org.mockito:mockito-core:${mockito_core_version}"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:${mockito_kotlin_version}"
+    testImplementation  "pl.pragmatists:JUnitParams:1.1.1"
+}

@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'maven-publish'
+    id 'com.jaredsburrows.license'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    // As a workaround, include these jars to the project so we can resolve other modules
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly gradleApi()
+
+    implementation "org.apache.logging.log4j:log4j-api:${log4j_version}"
+    annotationProcessor "org.apache.logging.log4j:log4j-core:${log4j_version}"
+    implementation "org.apache.logging.log4j:log4j-slf4j-impl:${log4j_version}"
+    implementation "net.sf.saxon:Saxon-HE:${saxon_he_version}"
+    implementation "xerces:xercesImpl:${xerces_version}"
+    implementation "com.github.curious-odd-man:rgxgen:${rgxgen_version}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinx_coroutine_version}"
+
+    testImplementation gradleTestKit()
+    testImplementation "junit:junit:${junit_version}"
+}
+
+task configureJar {
+    doLast {
+        configure(tasks.'jar') {
+            from(configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }) {
+                // remove all signature files
+                exclude("META-INF/*.RSA", "META-INF/*.DSA", "META-INF/*.SF")
+                duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+            }
+        }
+    }
+}
+
+jar {
+    dependsOn(':core:copyJar')
+    dependsOn(':android-core:copyJar')
+    dependsOn('configureJar')
+}
+
+publishing {
+    publications {
+        plugin(MavenPublication) {
+            groupId = 'org.mint.tooling'
+            artifactId 'mint-gradle-plugin'
+            version mintVersion
+            artifacts = [ jar ]
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+}

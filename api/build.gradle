@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+    // note: this 'fat-aarr of our complete api' is tricky because it's not that supported anymore:
+    // - https://github.com/kezong/fat-aar-android
+    // However, the alternative is publishing all modules separately (which is now a bit early and therefore a burden)
+    // There is a long outstanding google discussion about supporting this feature:
+    // - https://issuetracker.google.com/issues/62121508
+    id 'com.kezong.fat-aar'
+}
+
+android {
+    namespace = 'org.mint.android'
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        aarMetadata {
+            minCompileSdk = 21
+        }
+
+        versionCode 1
+        versionName "0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'org.mint'
+            artifactId = 'android'
+            version = mintVersion
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+
+    repositories {
+            mavenLocal()
+        }
+}
+
+dependencies {
+    // note that we use 'embed' instead of implementation(project(":core")) b/c fat aar
+    // somehow these break and aren't added as transitive dependencies
+    // Open issue: https://github.com/kezong/fat-aar-android/issues/257
+    // Note that this is a nasty hack, as it requires us to do double bookkeeping for now.
+    // So a proper solution needs to be identified sometime. However, that's related to
+    // the AAR issue above as well
+    implementation "net.sf.saxon:Saxon-HE:${saxon_he_version}"
+    implementation "xerces:xercesImpl:${xerces_version}"
+    implementation "com.github.curious-odd-man:rgxgen:${rgxgen_version}"
+    implementation "androidx.test.espresso:espresso-intents:${espresso_version}"
+    implementation "androidx.test.espresso:espresso-contrib:${espresso_version}"
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+    // End of the manual bookkeeping
+    
+    embed(project(path: ':core', configuration: 'default')) {
+        transitive = true
+    }
+    embed(project(path: ':android-core', configuration: 'default')) {
+        transitive = true
+    }
+    embed(project(path: ':espresso-runner', configuration: 'default')) {
+        transitive = true
+    }
+    embed(project(path: ':integration-test-runner', configuration: 'default')) {
+        transitive = true
+    }
+
+    // Gradle is confused if we don't include this explicitly, but we can't use 'implementation'
+    // or 'androidTestImplementation' or similar, as it would result in having 2 copies in the DEX
+    testCompileOnly(project(":core"))
+    testCompileOnly(project(":android-core"))
+    testCompileOnly(project(":espresso-runner"))
+    testCompileOnly(project(":integration-test-runner"))
+
+    implementation "androidx.core:core-ktx:${kotlin_version}"
+    implementation "androidx.appcompat:appcompat:${appcompat_version}"
+    implementation "com.google.android.material:material:${material_version}"
+    testImplementation "junit:junit:${junit_version}"
+    testImplementation "org.robolectric:robolectric:${roboelectric_version}"
+    testImplementation 'xalan:xalan:2.7.1'
+    testImplementation "org.mockito:mockito-core:${mockito_core_version}"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:${mockito_kotlin_version}"
+}

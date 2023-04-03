@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.jaredsburrows.license'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "org.mint.testapp"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions.resources.merges += "**/META-INF/DEPENDENCIES"
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation(project(":core"))
+    implementation(project(":android-core"))
+    implementation(project(":espresso-runner"))
+    implementation(project(":integration-test-runner"))
+
+    implementation "androidx.core:core-ktx:${kotlin_version}"
+    implementation "androidx.appcompat:appcompat:${appcompat_version}"
+    implementation "com.google.android.material:material:${material_version}"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    testImplementation "junit:junit:${junit_version}"
+    testImplementation "org.robolectric:robolectric:${roboelectric_version}"
+
+    androidTestImplementation "androidx.test.ext:junit:${androidx_junit_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_version}"
+}

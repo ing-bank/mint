@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:${kotlin_version}"
+}
+
+// start of hack
+// sadly we need to copy this AAR to the libs dir of the tooling project, because of this limitation:
+// https://discuss.gradle.org/t/how-can-i-generate-both-android-and-pure-java-libraries-from-a-single-code-base/31093/2
+
+// ../../android-core/build/intermediates/aar_main_jar/debug/classes.jar
+task copyJarDebug(type: Copy) {
+    from    ( [buildDir.absolutePath, 'intermediates', 'aar_main_jar', 'debug'].join(File.separator) )
+    include ( "classes.jar" )
+    into    ( [project.rootProject.projectDir, 'tooling', 'libs'].join(File.separator) )
+    rename  ( "classes.jar", "${project.name}.jar")
+}
+task copyJar(type: Copy) {
+    from    ( [buildDir.absolutePath, 'intermediates', 'aar_main_jar', 'release'].join(File.separator) )
+    include ( "classes.jar" )
+    into    ( [project.rootProject.projectDir, 'tooling', 'libs'].join(File.separator) )
+    rename  ( "classes.jar", "${project.name}.jar")
+}
+afterEvaluate {
+    bundleDebugAar.finalizedBy('copyJarDebug')
+    bundleReleaseAar.finalizedBy('copyJar')
+}
+// end of hack
