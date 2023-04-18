@@ -3,12 +3,21 @@
 Here we will explain you on how to use MINT in your Android app. If you are looking on how to contribute to MINT itself, please see [this document](contributing.md). 
 
 ## Setting up MINT
-The steps you need to do in order to configure MINT are the following:    
+The steps you need to do in order to configure MINT are the following:
+
+### Install the MINT artifacts in your local Maven repository:
+In your local MINT project, run this command to publish the MINT artifacts to your local Maven repository:
+    `./gradlew publishToMavenLocal`
 
 ### Configure the MINT dependency in your project:
 Configuration for the MINT test dependency in the application module's build.gradle
 
 ```gradle
+repositories {
+        ...
+        mavenLocal()
+}
+
 dependencies {
     def mint_version = 'x.y.z-hash'
     androidTestImplementation "org.mint:android:${mint_version}"
@@ -113,4 +122,8 @@ Or, when you want to execute some manual step(s) before starting to explore (i.e
             onView(withId(R.id.add_note_description_edit_text)).perform(typeText("desc"))
             onView(withId(R.id.add_note_button)).perform(click())
         }.explore()
+    }
 ```
+
+### Example setup
+For a demonstration on how to use MINT in your Android application, you can check this [reference project](https://github.com/AnaMManolache/Notally).
