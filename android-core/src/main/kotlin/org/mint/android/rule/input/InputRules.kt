@@ -68,10 +68,10 @@ object InputRules {
     private const val standardEditTextPredicate = " @isEditText = 'true' and @isDisplayed = 'true' " +
         "and @hasOnClickListeners = 'false'"
 
-    fun defaultUTF8InputRule(): GenericInputRule =
-        GenericInputRule(
+    fun defaultUTF8InputRule(): PositionBasedInputRule =
+        PositionBasedInputRule(
             description = "Generate UTF8 text streams for anything accepting text",
-            pred = BasicRules.xpred(".[@isEditText='true']"),
+            pred = BasicRules.xpred(".[$standardEditTextPredicate]"),
             prio = BasicRules.defaultPrio,
             gen = {
                 it.selectOneOf(
@@ -82,11 +82,12 @@ object InputRules {
                         )
                     )
                 )
-            }
+            },
+            itemPosition = BasicRules.positionInViewHierarchy
         )
 
-    fun defaultTextInputRule(): GenericInputRule =
-        GenericInputRule(
+    fun defaultTextInputRule(): PositionBasedInputRule =
+        PositionBasedInputRule(
             description = "Generate generic text for anything accepting text",
             pred = BasicRules.xpred(
                 ".[" +
@@ -94,11 +95,12 @@ object InputRules {
                     " and number(@inputType) = $INPUT_TYPE_TEXT or number(@inputType) = $INPUT_TYPE_TEXT_PASSWORD ]"
             ),
             prio = BasicRules.defaultPrio,
-            gen = rgen("([A-Za-z ]{5,20}|([A-Za-z0-9 ]{5,20})|([0-9]{1,5})")
+            gen = rgen("([A-Za-z ]{5,20}|([A-Za-z0-9 ]{5,20})|([0-9]{1,5})"),
+            itemPosition = BasicRules.positionInViewHierarchy
         )
 
-    fun defaultMultilineTextInputRule(): GenericInputRule =
-        GenericInputRule(
+    fun defaultMultilineTextInputRule(): PositionBasedInputRule =
+        PositionBasedInputRule(
             description = "Generate generic text for anything accepting text",
             pred = BasicRules.xpred(
                 ".[" +
@@ -106,7 +108,8 @@ object InputRules {
                     "and number(@inputType) = $INPUT_TYPE_TEXT_MULTILINE ]"
             ),
             prio = BasicRules.defaultPrio,
-            gen = rgen("([A-Za-z \\n]{5,40}|([A-Za-z0-9 \\n]{5,40})|([0-9]{1,5})")
+            gen = rgen("([A-Za-z \\n]{5,40}|([A-Za-z0-9 \\n]{5,40})|([0-9]{1,5})"),
+            itemPosition = BasicRules.positionInViewHierarchy
         )
 
     fun defaultEmailAddressInputRule(): GenericInputRule =
@@ -243,12 +246,13 @@ object InputRules {
         )
 
     // for input types & combinations not covered by the more specific rules
-    fun defaultGenericTextInputRule(): GenericInputRule =
-        GenericInputRule(
+    fun defaultGenericTextInputRule(): PositionBasedInputRule =
+        PositionBasedInputRule(
             description = "Generate generic text for anything accepting any type of input",
             pred = BasicRules.xpred(".[$standardEditTextPredicate]"),
             prio = BasicRules.fprio(BigDecimal(0.5)),
-            gen = rgen("([A-Za-z ]{5,20}|([A-Za-z0-9 ]{5,20})|([0-9]{1,5})")
+            gen = rgen("([A-Za-z ]{5,20}|([A-Za-z0-9 ]{5,20})|([0-9]{1,5})"),
+            itemPosition = BasicRules.positionInViewHierarchy
         )
 
     fun defaultUneditableTextClickDeprioritizeRule(): MultiplicativeRule =

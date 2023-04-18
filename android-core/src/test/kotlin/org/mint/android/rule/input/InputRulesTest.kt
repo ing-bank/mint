@@ -37,7 +37,7 @@ class InputRulesTest : StateTest() {
 
     @Test
     @Parameters(method = "rules")
-    fun inputRules(rule: GenericInputRule) {
+    fun inputRules(rule: BaseInputRule) {
         state.extendWithRuleGroups()
         state.apply(rule)
 
@@ -50,7 +50,7 @@ class InputRulesTest : StateTest() {
 
     @Test
     @Parameters(method = "genericRules")
-    fun genericInputRule(rule: GenericInputRule) {
+    fun genericInputRule(rule: BaseInputRule) {
         val s = buildState(
             """
         <View class="com.android.internal.policy.DecorView">
@@ -75,14 +75,14 @@ class InputRulesTest : StateTest() {
         assertFalse(input.isNullOrBlank())
     }
 
-    private fun rules(): List<GenericInputRule> {
+    private fun rules(): List<BaseInputRule> {
         // exclude the generic ones from the parameterized test since they're catch-all and will match all EditText views, regardless of inputTypes
         return GenericInputRule.rules.filter { r ->
             !genericRules().any { gr -> gr.description == r.description }
         }
     }
 
-    private fun genericRules(): List<GenericInputRule> {
+    private fun genericRules(): List<BaseInputRule> {
         return listOf(InputRules.defaultGenericTextInputRule(), InputRules.defaultUTF8InputRule())
     }
 }
