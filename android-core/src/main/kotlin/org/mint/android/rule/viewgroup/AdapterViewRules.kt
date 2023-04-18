@@ -53,6 +53,7 @@ object AdapterViewRules {
                     "and @isClickable = 'true' " +
                     "and @isAdapterView = 'true' " +
                     "and not(@isSpinner = 'true') " +
+                    "and @resourceName" +
                     "]"
             ),
             itemPosition = randomPositionInList,

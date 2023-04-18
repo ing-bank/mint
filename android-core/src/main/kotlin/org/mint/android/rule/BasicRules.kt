@@ -15,7 +15,7 @@ object BasicRules {
 
     val defaultPrio = { _: AndroidState -> BigDecimal(1) }
     private val viewTag: (AndroidState) -> String = { s -> (s.node as Element).getAttribute("tag") }
-    private val positionInViewHierarchy: (AndroidState) -> String =
+    val positionInViewHierarchy: (AndroidState) -> String =
         { s -> (s.node as Element).getAttribute("positionInViewHierarchy") }
 
     fun fprio(p: BigDecimal) = { _: AndroidState -> p }

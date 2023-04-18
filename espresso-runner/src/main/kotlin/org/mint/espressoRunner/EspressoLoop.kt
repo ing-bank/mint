@@ -4,6 +4,7 @@ import android.app.Instrumentation.ActivityResult
 import androidx.fragment.app.FragmentActivity.RESULT_OK
 import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.ViewActions.clearText
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
@@ -17,6 +18,7 @@ import androidx.test.espresso.intent.matcher.IntentMatchers.isInternal
 import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withResourceName
 import androidx.test.espresso.matcher.ViewMatchers.withTagValue
+import com.google.common.base.Strings
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.anything
 import org.hamcrest.Matchers.hasToString
@@ -157,11 +159,17 @@ data class EspressoLoop(private val _ctx: AndroidCtx, private val seq: String, p
             }
             Action.INPUT.tagName -> {
                 val input = n.getAttribute("text")
+                val position = n.getAttribute("position")
+                val target: ViewInteraction = if (!Strings.isNullOrEmpty(position)) {
+                    onView(ViewAtPosition(position))
+                } else {
+                    view
+                }
                 if (isTypeableRegex.matches(input)) {
-                    view.perform(clearText(), typeText(input), closeSoftKeyboard())
+                    target.perform(clearText(), typeText(input), closeSoftKeyboard())
                 } else {
                     // We can't type this string on the (soft) keyboard, so just replace the existing text
-                    view.perform(replaceText(input))
+                    target.perform(replaceText(input))
                 }
             }
             Action.DATE_PICKER_INPUT.tagName -> {
