@@ -27,7 +27,7 @@ object GetRoots : () -> List<View> {
         val subWindowRootMatchers = listOf(
             RootMatchers.isPlatformPopup(),
             RootMatchers.isDialog(),
-            RootMatchers.isSystemAlertWindow()
+            RootMatchers.isSystemAlertWindow(),
         )
         subWindowRootMatchers.forEach { subWindowRootMatcher ->
             Espresso.onView(m)

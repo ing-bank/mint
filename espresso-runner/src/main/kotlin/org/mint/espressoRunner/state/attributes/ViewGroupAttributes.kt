@@ -38,7 +38,7 @@ internal object ViewGroupAttributes {
                 node.setAttribute("isIconified", view.isIconified.toString())
                 node.setAttribute(
                     "isSubmitButtonEnabled",
-                    view.isSubmitButtonEnabled.toString()
+                    view.isSubmitButtonEnabled.toString(),
                 )
             }
             is ViewPager -> {

@@ -40,8 +40,8 @@ internal class ViewAtPositionTest {
         value = [
             "root.0.1.1",
             "",
-            "root.0.2"
-        ]
+            "root.0.2",
+        ],
     )
     fun noMatches(position: String) {
         val viewAtPositionMatcher = ViewAtPosition(position)

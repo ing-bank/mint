@@ -13,7 +13,7 @@ class NoopOracle : Oracle<AndroidState> {
 
         val CATEGORIES: Set<OracleCategory> = setOf(
             OracleCategory.STABILITY,
-            OracleCategory.PERFORMANCE
+            OracleCategory.PERFORMANCE,
         )
     }
 

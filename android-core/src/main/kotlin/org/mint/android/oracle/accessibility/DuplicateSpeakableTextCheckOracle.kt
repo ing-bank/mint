@@ -9,6 +9,6 @@ class DuplicateSpeakableTextCheckOracle : AccessibilityOracle() {
     override val description = "Checks if two Views in a hierarchy have the same speakable text, " +
         "which could be confusing for users."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

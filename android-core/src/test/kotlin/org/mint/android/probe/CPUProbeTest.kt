@@ -33,7 +33,7 @@ class CPUProbeTest {
                     Assert.assertEquals("364", cpuInfo.pid)
                     Assert.assertEquals(
                         "android.hardware.bluetooth@1.1-service.sim",
-                        cpuInfo.packageName
+                        cpuInfo.packageName,
                     )
                     Assert.assertEquals("0", cpuInfo.userLoad)
                     Assert.assertEquals("6.8", cpuInfo.kernelLoad)

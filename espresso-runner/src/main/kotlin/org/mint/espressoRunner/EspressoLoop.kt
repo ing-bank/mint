@@ -71,7 +71,7 @@ data class EspressoLoop(private val _ctx: AndroidCtx, private val seq: String, p
             val (_, node) = EspressoStateToXML.emptySUT()
             node.setAttribute(
                 AndroidConstants.ERROR_MESSAGE,
-                "Cannot obtain the root view, no concrete state available"
+                "Cannot obtain the root view, no concrete state available",
             )
             node
         } else {
@@ -116,8 +116,8 @@ data class EspressoLoop(private val _ctx: AndroidCtx, private val seq: String, p
                 onView(
                     allOf(
                         withTagValue(hasToString(n.getAttribute("tag"))),
-                        withResourceName(n.getAttribute("resourceName"))
-                    )
+                        withResourceName(n.getAttribute("resourceName")),
+                    ),
                 ).perform(click())
             }
             Action.CLICK_ON_ITEM_AT_POSITION.tagName -> {

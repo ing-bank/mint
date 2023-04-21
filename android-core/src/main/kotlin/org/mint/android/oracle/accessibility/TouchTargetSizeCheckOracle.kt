@@ -9,6 +9,6 @@ class TouchTargetSizeCheckOracle : AccessibilityOracle() {
     override val description = "Check ensuring touch targets have a minimum size, " +
         "48x48dp by default."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

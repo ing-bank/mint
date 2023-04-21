@@ -24,5 +24,5 @@ enum class Verdict {
     /**
      * No known way to process the type of information acquired.
      */
-    DONT_KNOW
+    DONT_KNOW,
 }

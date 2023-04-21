@@ -11,6 +11,6 @@ class ClickableSpanCheckOracle : AccessibilityOracle() {
         "independently in a single TextView and because accessibility services were unable to " +
         "call ClickableSpan#onClick."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

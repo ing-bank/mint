@@ -17,7 +17,7 @@ class AbstractRegexGenerationRuleTest : StateTest() {
             description = "n/a",
             pred = ".[contains(@class, 'androidx.appcompat.widget.AppCompatEditText')]",
             prio = "1.0",
-            reg = regex
+            reg = regex,
         )
 
         state.extendWithRuleGroups()

@@ -29,7 +29,7 @@ class BaseRuleTest : StateTest() {
             description = "n/a",
             action = Action.CLICK,
             pred = ".[@class = 'does.not.exist']",
-            prio = "1.0"
+            prio = "1.0",
         )
 
         state.extendWithRuleGroups()
@@ -45,7 +45,7 @@ class BaseRuleTest : StateTest() {
             description = "n/a",
             action = Action.CLICK,
             pred = ".[@class = 'does.not.exist' or @class = 'androidx.appcompat.widget.AppCompatEditText']",
-            prio = "1.0"
+            prio = "1.0",
         )
 
         state.extendWithRuleGroups()
@@ -58,7 +58,7 @@ class BaseRuleTest : StateTest() {
     fun matchAddedAttribute() {
         val rule = object : BaseRule() {
             val activeWidgetFQNs: Set<String> = setOf(
-                "androidx.appcompat.widget.AppCompatEditText"
+                "androidx.appcompat.widget.AppCompatEditText",
             )
 
             override fun attributes(state: AndroidState, action: Element) {

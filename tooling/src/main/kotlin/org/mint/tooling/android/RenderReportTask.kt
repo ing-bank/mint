@@ -18,7 +18,7 @@ open class RenderReportTask : DefaultTask() {
     @set: Option(
         option = "no-pull",
         description = "indicates to skip data retrieval from the device\\n" +
-            "and to use local MINT data found at the default or specified location"
+            "and to use local MINT data found at the default or specified location",
     )
     var noPull = false
 
@@ -26,7 +26,7 @@ open class RenderReportTask : DefaultTask() {
     @Optional
     @set: Option(
         option = "target",
-        description = "the location of the MINT results"
+        description = "the location of the MINT results",
     )
     var targetDir: String? = null
 

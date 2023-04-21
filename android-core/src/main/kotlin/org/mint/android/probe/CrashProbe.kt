@@ -24,7 +24,7 @@ class CrashProbe(private val applicationMonitors: Set<ApplicationMonitor<in Any>
     override val version: String = CrashProbe.version
     override val description: String = CrashProbe.description
     override val categories: Set<ProbeCategory> = setOf(
-        ProbeTimingCategory.POST_ACTION
+        ProbeTimingCategory.POST_ACTION,
     )
 
     private var throwables: List<Throwable> = listOf()

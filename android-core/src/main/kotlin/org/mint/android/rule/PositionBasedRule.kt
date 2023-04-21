@@ -9,7 +9,7 @@ data class PositionBasedRule(
     override val action: Action,
     val pred: (AndroidState) -> Boolean,
     val itemPosition: (AndroidState) -> String,
-    val prio: (AndroidState) -> BigDecimal
+    val prio: (AndroidState) -> BigDecimal,
 ) : BasePositionBasedClickRule() {
     override fun priority(): (AndroidState) -> BigDecimal = prio
     override fun predicate(): (AndroidState) -> Boolean = pred

@@ -14,5 +14,5 @@ enum class Action(val tagName: String) {
     SCROLL_TO_AND_CLICK_ITEM_AT_POSITION("scrollToAndClick"),
     TIME_PICKER_INPUT("timePickerInput"),
     DEVICE_ROTATION_CHANGE("deviceRotationChange"),
-    DEVICE_THEME_CHANGE("deviceThemeChange")
+    DEVICE_THEME_CHANGE("deviceThemeChange"),
 }

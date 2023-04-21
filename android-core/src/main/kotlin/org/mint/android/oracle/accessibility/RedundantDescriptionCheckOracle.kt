@@ -9,6 +9,6 @@ class RedundantDescriptionCheckOracle : AccessibilityOracle() {
     override val description = "Checks for speakable text that may contain redundant " +
         "or inappropriate information."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

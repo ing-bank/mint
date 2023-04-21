@@ -5,5 +5,5 @@ package org.mint.lib
  */
 enum class ProbeTimingCategory : ProbeCategory {
     PRE_ACTION,
-    POST_ACTION
+    POST_ACTION,
 }

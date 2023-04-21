@@ -18,7 +18,7 @@ internal object KeyboardAttributes {
             if (!isWindowAdjustableForSoftInput(applicationContext)) {
                 node.setAttribute(
                     "isSoftKeyboardVisible",
-                    isKeyboardVisible(view, applicationContext).toString()
+                    isKeyboardVisible(view, applicationContext).toString(),
                 )
             }
         }
@@ -33,7 +33,7 @@ internal object KeyboardAttributes {
         val marginOfErrorInPx = TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP,
             50F,
-            context.resources.displayMetrics
+            context.resources.displayMetrics,
         ).roundToInt()
 
         return heightDiff > marginOfErrorInPx

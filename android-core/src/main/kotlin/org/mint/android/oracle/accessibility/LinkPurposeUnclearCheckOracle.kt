@@ -9,6 +9,6 @@ class LinkPurposeUnclearCheckOracle : AccessibilityOracle() {
     override val description = "Check to warn about a link (ClickableSpan) " +
         "whose purpose is unclear."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

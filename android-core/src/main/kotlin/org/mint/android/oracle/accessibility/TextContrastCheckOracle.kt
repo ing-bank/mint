@@ -9,6 +9,6 @@ class TextContrastCheckOracle : AccessibilityOracle() {
     override val description = "Check that ensures text content has sufficient contrast " +
         "against its background."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

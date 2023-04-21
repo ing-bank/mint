@@ -80,7 +80,7 @@ fun Node.notCorrelated(): Boolean {
 fun Node.appendChild(
     tagName: String,
     namespace: String? = null,
-    attributes: List<Pair<String, String>>? = null
+    attributes: List<Pair<String, String>>? = null,
 ): Node {
     val document = ownerDocument
 

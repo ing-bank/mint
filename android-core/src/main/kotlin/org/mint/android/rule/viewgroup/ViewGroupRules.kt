@@ -15,9 +15,9 @@ object ViewGroupRules {
             description = "Scroll pager to the right",
             action = Action.SCROLL_PAGER_TO_RIGHT,
             pred = xpred(
-                ".[@isViewPager = 'true' and @canScrollRight = 'true' ]"
+                ".[@isViewPager = 'true' and @canScrollRight = 'true' ]",
             ),
-            prio = defaultPrio
+            prio = defaultPrio,
         )
 
     fun scrollingPagerLeftRule(): GenericRule =
@@ -25,9 +25,9 @@ object ViewGroupRules {
             description = "Scroll pager to the left",
             action = Action.SCROLL_PAGER_TO_LEFT,
             pred = xpred(
-                ".[@isViewPager = 'true' and @canScrollLeft = 'true' ]"
+                ".[@isViewPager = 'true' and @canScrollLeft = 'true' ]",
             ),
-            prio = defaultPrio
+            prio = defaultPrio,
         )
 
     // The simple click action cannot be used for widgets contained by RecyclerView or ViewPager,
@@ -38,6 +38,6 @@ object ViewGroupRules {
             description = "De-prioritized the clicking of individual RecyclerView or ViewPager items with simple click",
             action = Action.CLICK,
             pred = xpred(".[ancestor::*[@isRecyclerView = 'true'] or ancestor::*[@isViewPager = 'true'] ]"),
-            prio = BasicRules.fprio(BigDecimal(0.01))
+            prio = BasicRules.fprio(BigDecimal(0.01)),
         )
 }

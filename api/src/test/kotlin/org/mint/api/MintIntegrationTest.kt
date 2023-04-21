@@ -38,7 +38,7 @@ class MintIntegrationTest : StateBuilder {
           <View id="a" isClickable="true" isDisplayed="true"/>
           <View id="b" isClickable="false" isDisplayed="true"/>
         </View>
-        """.trimIndent()
+        """.trimIndent(),
     )
 
     private val stepTwo: AndroidState = buildState(
@@ -48,7 +48,7 @@ class MintIntegrationTest : StateBuilder {
           <View id="a" isClickable="true" isDisplayed="true"/>
           <View id="b" isClickable="true" isDisplayed="true"/>
         </View>
-        """.trimIndent()
+        """.trimIndent(),
     )
 
     private val mint: MINT = MINT.Builder()
@@ -63,7 +63,7 @@ class MintIntegrationTest : StateBuilder {
                     .withStep(stepTwo)
                     .withInvariant(XQueryPredicate("count(//View) = 3"))
                     .withPredicate(1, XQueryPredicate("count(//action:click[@selected = 'true']) = 1"))
-                    .withPredicate(2, XQueryPredicate("count(//action:click[@selected = 'true']) = 1"))
+                    .withPredicate(2, XQueryPredicate("count(//action:click[@selected = 'true']) = 1")),
             )
         }
         .build { e -> Assert.fail(e) }!!
@@ -121,7 +121,7 @@ class MintIntegrationTest : StateBuilder {
         <View>
           <View id="a" isClickable="false" />
         </View>
-            """.trimIndent()
+            """.trimIndent(),
         )
 
         val mint = MINT.Builder()
@@ -139,9 +139,9 @@ class MintIntegrationTest : StateBuilder {
                             XQueryPredicate(
                                 "count(*:action[@message = " +
                                     "'Invalid SUT: No actionable items found. " +
-                                    "Please check if screen has valid widgets that MINT can interact with.']) = 1"
-                            )
-                        )
+                                    "Please check if screen has valid widgets that MINT can interact with.']) = 1",
+                            ),
+                        ),
                 )
             }
             .build { e -> Assert.fail(e) }!!
@@ -154,8 +154,8 @@ class MintIntegrationTest : StateBuilder {
             e.message,
             containsString(
                 "Invalid SUT: No actionable items found. " +
-                    "Please check if screen has valid widgets that MINT can interact with"
-            )
+                    "Please check if screen has valid widgets that MINT can interact with",
+            ),
         )
     }
 
@@ -167,7 +167,7 @@ class MintIntegrationTest : StateBuilder {
           <View id="a" isClickable="true" isDisplayed = "true" />
           <View id="a" isClickable="true" isDisplayed = "true" />
         </View>
-            """.trimIndent()
+            """.trimIndent(),
         )
 
         val mint = MINT.Builder()
@@ -178,7 +178,7 @@ class MintIntegrationTest : StateBuilder {
                 object : ITTestLoop(
                     builder(ctx)
                         .withStep(state)
-                        .withPredicate(1, XQueryPredicate("count(//action:click[@selected = 'true']) = 2"))
+                        .withPredicate(1, XQueryPredicate("count(//action:click[@selected = 'true']) = 2")),
                 ) {
                     override fun actionSelection(state: AndroidState): Either<AndroidState, AndroidState> {
                         state.query { it.hasNS(AndroidConstants.RULE_NS) }
@@ -198,8 +198,8 @@ class MintIntegrationTest : StateBuilder {
             "error message",
             e.message,
             containsString(
-                "Multiple actions were selected in the same step, though only one is expected"
-            )
+                "Multiple actions were selected in the same step, though only one is expected",
+            ),
         )
     }
 
@@ -240,7 +240,7 @@ class MintIntegrationTest : StateBuilder {
           <View id="a" isEditText="true" isDisplayed="true" hasOnClickListeners="false"/>
           <View id="b" isClickable="true" isDisplayed="true"/>
         </View>
-            """.trimIndent()
+            """.trimIndent(),
         )
 
         return MINT.Builder()
@@ -249,8 +249,8 @@ class MintIntegrationTest : StateBuilder {
                     description = "Generate UTF8 text streams for anything accepting text",
                     pred = BasicRules.xpred(".[@isEditText='true']"),
                     prio = BasicRules.defaultPrio,
-                    gen = { "\uD83D\uDC64" }
-                )
+                    gen = { "\uD83D\uDC64" },
+                ),
             )
             .withStateRepository(repo)
             .withOracle(NoopOracle())
@@ -260,7 +260,7 @@ class MintIntegrationTest : StateBuilder {
                     ITTestLoop
                         .builder(ctx)
                         .withStep(state)
-                        .withPredicate(1, XQueryPredicate("count(//action:input[@selected = 'true']) = 1"))
+                        .withPredicate(1, XQueryPredicate("count(//action:input[@selected = 'true']) = 1")),
                 )
             }
             .build { e -> Assert.fail(e) }!!
@@ -273,7 +273,7 @@ class MintIntegrationTest : StateBuilder {
         <View>
           <View id="a" isClickable="true" />
         </View>
-            """.trimIndent()
+            """.trimIndent(),
         )
         val am: ApplicationMonitor<Nothing> = mock()
 
@@ -286,7 +286,7 @@ class MintIntegrationTest : StateBuilder {
                 ITTestLoop(
                     ITTestLoop
                         .builder(ctx)
-                        .withStep(state)
+                        .withStep(state),
                 )
             }
             .build { e -> Assert.fail(e) }!!

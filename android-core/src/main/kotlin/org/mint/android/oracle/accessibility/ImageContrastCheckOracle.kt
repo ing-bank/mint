@@ -9,6 +9,6 @@ class ImageContrastCheckOracle : AccessibilityOracle() {
     override val description = "Check that ensures image foregrounds have sufficient " +
         "contrast against their background."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

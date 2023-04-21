@@ -9,6 +9,6 @@ class TraversalOrderCheckOracle : AccessibilityOracle() {
     override val description = "Check to detect problems in the developer specified " +
         "accessibility traversal ordering."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }
