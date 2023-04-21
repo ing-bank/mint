@@ -11,6 +11,6 @@ class DuplicateClickableBoundsCheckOracle : AccessibilityOracle() {
         "container shares its bounds with a child view, that is a clear error. " +
         "This class catches that case."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

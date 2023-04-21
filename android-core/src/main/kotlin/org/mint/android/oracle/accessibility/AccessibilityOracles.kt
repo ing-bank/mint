@@ -15,6 +15,6 @@ object AccessibilityOracles {
         TextSizeCheckOracle(),
         TouchTargetSizeCheckOracle(),
         TraversalOrderCheckOracle(),
-        UnexposedTextCheckOracle()
+        UnexposedTextCheckOracle(),
     )
 }

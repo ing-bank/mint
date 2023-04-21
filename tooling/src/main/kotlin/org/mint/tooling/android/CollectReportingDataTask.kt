@@ -12,7 +12,7 @@ abstract class CollectReportingDataTask : DefaultTask() {
     @Optional
     @set: Option(
         option = "target",
-        description = "the location of the MINT results"
+        description = "the location of the MINT results",
     )
     var targetDir: String? = null
 

@@ -173,7 +173,7 @@ object ViewAttributes {
                                         .resources
                                         .configuration
                                         .locale
-                                        .toString()
+                                        .toString(),
                                 )
                             } else {
                                 node.setAttribute(
@@ -184,14 +184,14 @@ object ViewAttributes {
                                         .configuration
                                         .locales
                                         .get(0)
-                                        .toString()
+                                        .toString(),
                                 )
                             }
                         } catch (e: Resources.NotFoundException) {
                             node.setAttribute("locale", "unknown")
                             Log.e(
                                 TAG,
-                                "Failed to retrieve Resource Configuration (Locale). Details: $e"
+                                "Failed to retrieve Resource Configuration (Locale). Details: $e",
                             )
                         }
 

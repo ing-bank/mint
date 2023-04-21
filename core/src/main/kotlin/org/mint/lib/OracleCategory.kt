@@ -7,5 +7,5 @@ enum class OracleCategory(val description: String) {
     PERFORMANCE("Performance"),
     STABILITY("Stability"),
     AESTETHICS("Look and feel"),
-    OTHER("Miscellaneous")
+    OTHER("Miscellaneous"),
 }

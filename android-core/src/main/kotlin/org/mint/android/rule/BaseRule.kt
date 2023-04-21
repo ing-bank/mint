@@ -26,7 +26,7 @@ abstract class BaseRule : AndroidConstants, RuleTools, Rule<AndroidState> {
             _action.setAttribute(AndroidConstants.PRIORITY, priority()(state).toString())
             _action.setAttribute(
                 AndroidConstants.RESOURCE_NAME,
-                state.node.getAttribute(AndroidConstants.RESOURCE_NAME)
+                state.node.getAttribute(AndroidConstants.RESOURCE_NAME),
             )
 
             attributes(state, _action)

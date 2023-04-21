@@ -62,7 +62,7 @@ class InputRulesTest : StateTest() {
                 </View>
               </View>
         </View>
-            """.trimIndent()
+            """.trimIndent(),
         )
 
         s.extendWithRuleGroups()

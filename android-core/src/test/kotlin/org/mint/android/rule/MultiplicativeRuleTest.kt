@@ -29,21 +29,21 @@ class MultiplicativeRuleTest : StateTest() {
                 description = "Click on any widget that has 'isClickable' as true",
                 action = Action.CLICK,
                 pred = BasicRules.xpred(".[@isClickable = 'true']"),
-                prio = BasicRules.fprio(BigDecimal(2))
+                prio = BasicRules.fprio(BigDecimal(2)),
             )
 
         val prio1 = MultiplicativeRule(
             description = "prioritize the clicking of elements",
             action = Action.CLICK,
             pred = BasicRules.xpred("."),
-            prio = BasicRules.fprio(BigDecimal(3))
+            prio = BasicRules.fprio(BigDecimal(3)),
         )
 
         val prio2 = MultiplicativeRule(
             description = "prioritize the clicking of elements",
             action = Action.CLICK,
             pred = BasicRules.xpred("."),
-            prio = BasicRules.fprio(BigDecimal(5))
+            prio = BasicRules.fprio(BigDecimal(5)),
         )
 
         state.extendWithRuleGroups()
@@ -78,7 +78,7 @@ class MultiplicativeRuleTest : StateTest() {
             <View isClickable="true"/>
           </y>
         </x>
-            """.trimIndent()
+            """.trimIndent(),
         )
         val rule = ViewGroupRules.replicatedItemSimpleClickDeprioritizeRule()
 
@@ -103,7 +103,7 @@ class MultiplicativeRuleTest : StateTest() {
                         isClickable="true"
                         isDisplayed="true">
                 </View>
-            """.trimIndent()
+            """.trimIndent(),
         )
 
         val actionRule = setOf(BasicRules.simpleClickableRule())

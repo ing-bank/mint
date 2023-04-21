@@ -29,6 +29,6 @@ object DeviceThemeChange {
 
     enum class Theme {
         DARK,
-        LIGHT
+        LIGHT,
     }
 }

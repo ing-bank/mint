@@ -10,6 +10,6 @@ class UnexposedTextCheckOracle : AccessibilityOracle() {
         "Reader) from a view that might be blocked that would result to it not being read by the " +
         "Accessibility Service."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

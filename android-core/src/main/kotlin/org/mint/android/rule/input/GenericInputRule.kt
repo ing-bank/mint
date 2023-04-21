@@ -8,7 +8,7 @@ data class GenericInputRule(
     override val description: String,
     val pred: (AndroidState) -> Boolean,
     val prio: (AndroidState) -> BigDecimal,
-    val gen: (AndroidState) -> String
+    val gen: (AndroidState) -> String,
 ) :
     BaseInputRule() {
     override val action: Action = Action.INPUT
@@ -31,12 +31,12 @@ data class GenericInputRule(
             InputRules.defaultDateInputRule(),
             InputRules.defaultPostalAddressInputRule(),
             InputRules.defaultPhoneNumberInputRule(),
-            InputRules.defaultGenericTextInputRule()
+            InputRules.defaultGenericTextInputRule(),
         )
         val deprioritizationRules = listOf(
             InputRules.defaultTextClickAtPositionDeprioritizeRule(),
             InputRules.defaultUneditableTextClickDeprioritizeRule(),
-            InputRules.defaultTextClickDeprioritizeRule()
+            InputRules.defaultTextClickDeprioritizeRule(),
         )
     }
 }

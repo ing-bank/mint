@@ -41,7 +41,7 @@ object InputRules {
         "ﾔP􌸎潮𤿷㓪ܮ񾂧𲔥󫅴ۑЦ+僑𘊣'oճ^񎡭.8畠Ҥ򻙼࠹ﺕ뻷Ƽᰧ脯",
         "٤󘳷4숓➃񡾟k𡓯ރÒ̋򅥿y⬰LۑӎOξ樲䵽Ԝ̻샽e䐎ɰ퟾󬌇ýv򄬓",
         "𥒪䔪𢂚񽖐d󷗜ᶟ񢡖𗼇򩒰򪯠󒐦ٛՄ󑽘í䀑򴚼􊂺􄘙گW򻓧Ꝋ񧆌񿒖⁢w뀯Ӄ&lt;䵖",
-        "󧓇󔰣幽Я󂖇9񳴎􋞂,ی񗛳ٸ٥lŘu[⻠sŏK]ʐ􀀛󶚠󩙲}᷼􈔌p"
+        "󧓇󔰣幽Я󂖇9񳴎􋞂,ی񗛳ٸ٥lŘu[⻠sŏK]ʐ􀀛󶚠󩙲}᷼􈔌p",
     )
 
     private val twoByteUTF8 = listOf(
@@ -49,7 +49,7 @@ object InputRules {
         "ܶؿ̰߶ՏҮȍđǮҖȔʖִŽƫǻ",
         "ސմ֌ȬƗŵިֆ݈ـŎӟůݑױǬ",
         "˘ҟӀ͍̀ߧʆђԿ̒ʲع˷ѭݢҒ",
-        "ߢІŋ߹źѩȱϻڈǶձǮ׸̀ڧܨ"
+        "ߢІŋ߹źѩȱϻڈǶձǮ׸̀ڧܨ",
     )
 
     fun rgen(r: String) = RegexInputGenerator(r)
@@ -78,12 +78,12 @@ object InputRules {
                     it.selectOneOf(
                         listOf(
                             multiByteUTF8,
-                            twoByteUTF8
-                        )
-                    )
+                            twoByteUTF8,
+                        ),
+                    ),
                 )
             },
-            itemPosition = BasicRules.positionInViewHierarchy
+            itemPosition = BasicRules.positionInViewHierarchy,
         )
 
     fun defaultTextInputRule(): PositionBasedInputRule =
@@ -92,11 +92,11 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    " and number(@inputType) = $INPUT_TYPE_TEXT or number(@inputType) = $INPUT_TYPE_TEXT_PASSWORD ]"
+                    " and number(@inputType) = $INPUT_TYPE_TEXT or number(@inputType) = $INPUT_TYPE_TEXT_PASSWORD ]",
             ),
             prio = BasicRules.defaultPrio,
             gen = rgen("([A-Za-z ]{5,20}|([A-Za-z0-9 ]{5,20})|([0-9]{1,5})"),
-            itemPosition = BasicRules.positionInViewHierarchy
+            itemPosition = BasicRules.positionInViewHierarchy,
         )
 
     fun defaultMultilineTextInputRule(): PositionBasedInputRule =
@@ -105,11 +105,11 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType) = $INPUT_TYPE_TEXT_MULTILINE ]"
+                    "and number(@inputType) = $INPUT_TYPE_TEXT_MULTILINE ]",
             ),
             prio = BasicRules.defaultPrio,
             gen = rgen("([A-Za-z \\n]{5,40}|([A-Za-z0-9 \\n]{5,40})|([0-9]{1,5})"),
-            itemPosition = BasicRules.positionInViewHierarchy
+            itemPosition = BasicRules.positionInViewHierarchy,
         )
 
     fun defaultEmailAddressInputRule(): GenericInputRule =
@@ -118,7 +118,7 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType)= $INPUT_TYPE_EMAIL_ADDRESS]"
+                    "and number(@inputType)= $INPUT_TYPE_EMAIL_ADDRESS]",
             ),
             prio = BasicRules.defaultPrio,
             gen = { s ->
@@ -129,10 +129,10 @@ object InputRules {
                         "$plantEmoji|" +
                         "[A-Za-z0-9_.-]{3,64}|" +
                         "[a-zA-Z0-9!#%+/=^`*&\$\'{|}_.~-]{3,64})" +
-                        "@[A-Za-z0-9]{3,64}\\.(nl|com|net|org|co\\.uk)"
+                        "@[A-Za-z0-9]{3,64}\\.(nl|com|net|org|co\\.uk)",
                 )
                     .invoke(s)
-            }
+            },
         )
 
     fun defaultNumberInputRule(): GenericInputRule =
@@ -141,10 +141,10 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType)= $INPUT_TYPE_NUMBER or number(@inputType) = $INPUT_TYPE_NUMBER_PASSWORD ]"
+                    "and number(@inputType)= $INPUT_TYPE_NUMBER or number(@inputType) = $INPUT_TYPE_NUMBER_PASSWORD ]",
             ),
             prio = BasicRules.defaultPrio,
-            gen = rgen("[0-9]{1,6}")
+            gen = rgen("[0-9]{1,6}"),
         )
 
     fun defaultDecimalNumberInputRule(): GenericInputRule =
@@ -153,10 +153,10 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType)= $INPUT_TYPE_NUMBER_DECIMAL]"
+                    "and number(@inputType)= $INPUT_TYPE_NUMBER_DECIMAL]",
             ),
             prio = BasicRules.defaultPrio,
-            gen = rgen("[1-9]{0,2}\\.?[0-9]{1,2}|0?\\.[0-9]{1,4}")
+            gen = rgen("[1-9]{0,2}\\.?[0-9]{1,2}|0?\\.[0-9]{1,4}"),
         )
 
     fun defaultSignedNumberInputRule(): GenericInputRule =
@@ -165,10 +165,10 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType)= $INPUT_TYPE_NUMBER_SIGNED]"
+                    "and number(@inputType)= $INPUT_TYPE_NUMBER_SIGNED]",
             ),
             prio = BasicRules.defaultPrio,
-            gen = rgen("[-+]{0,1}[1-9]{1,6}")
+            gen = rgen("[-+]{0,1}[1-9]{1,6}"),
         )
 
     fun defaultPersonNameInputRule(): GenericInputRule =
@@ -177,12 +177,12 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType)= $INPUT_TYPE_PERSON_NAME]"
+                    "and number(@inputType)= $INPUT_TYPE_PERSON_NAME]",
             ),
             prio = BasicRules.defaultPrio,
             // allows single-letter last name
             // capitalized single-letter first names can occur when using initials only
-            gen = rgen("[A-Z]{1}[a-z]{0,32} [A-Z]{1}[a-z]{0,32}")
+            gen = rgen("[A-Z]{1}[a-z]{0,32} [A-Z]{1}[a-z]{0,32}"),
         )
 
     fun defaultUriRule(): GenericInputRule =
@@ -191,10 +191,10 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType) = $INPUT_TYPE_URI]"
+                    "and number(@inputType) = $INPUT_TYPE_URI]",
             ),
             prio = BasicRules.defaultPrio,
-            gen = { "https://ing.nl" }
+            gen = { "https://ing.nl" },
         )
 
     fun defaultPhoneNumberInputRule(): GenericInputRule =
@@ -203,12 +203,12 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType) = $INPUT_TYPE_PHONE]"
+                    "and number(@inputType) = $INPUT_TYPE_PHONE]",
             ),
             prio = BasicRules.defaultPrio,
             gen = { s ->
                 Faker(locale.invoke(s)).phoneNumber().phoneNumber()
-            }
+            },
         )
 
     fun defaultPostalAddressInputRule(): GenericInputRule =
@@ -217,12 +217,12 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType) = $INPUT_TYPE_POSTAL_ADDRESS]"
+                    "and number(@inputType) = $INPUT_TYPE_POSTAL_ADDRESS]",
             ),
             prio = BasicRules.defaultPrio,
             gen = { s ->
                 Faker(locale.invoke(s)).address().zipCode()
-            }
+            },
         )
 
     fun defaultDateInputRule(): GenericInputRule =
@@ -231,10 +231,10 @@ object InputRules {
             pred = BasicRules.xpred(
                 ".[" +
                     standardEditTextPredicate +
-                    "and number(@inputType) = $INPUT_TYPE_DATE]"
+                    "and number(@inputType) = $INPUT_TYPE_DATE]",
             ),
             prio = BasicRules.fprio(BigDecimal(1)),
-            gen = { s -> DateInputSupplier.get(s.rnd, locale.invoke(s)) }
+            gen = { s -> DateInputSupplier.get(s.rnd, locale.invoke(s)) },
         )
 
     fun defaultTimeInputRule(): GenericInputRule =
@@ -242,7 +242,7 @@ object InputRules {
             description = "Generate time input for widgets accepting input as time",
             pred = BasicRules.xpred(".[" + standardEditTextPredicate + "and number(@inputType) = $INPUT_TYPE_TIME]"),
             prio = BasicRules.defaultPrio,
-            gen = { s -> TimeInputSupplier.get(s.rnd, locale.invoke(s)) }
+            gen = { s -> TimeInputSupplier.get(s.rnd, locale.invoke(s)) },
         )
 
     // for input types & combinations not covered by the more specific rules
@@ -252,7 +252,7 @@ object InputRules {
             pred = BasicRules.xpred(".[$standardEditTextPredicate]"),
             prio = BasicRules.fprio(BigDecimal(0.5)),
             gen = rgen("([A-Za-z ]{5,20}|([A-Za-z0-9 ]{5,20})|([0-9]{1,5})"),
-            itemPosition = BasicRules.positionInViewHierarchy
+            itemPosition = BasicRules.positionInViewHierarchy,
         )
 
     fun defaultUneditableTextClickDeprioritizeRule(): MultiplicativeRule =
@@ -260,7 +260,7 @@ object InputRules {
             description = "De-prioritized the input of text in text fields that are uneditable",
             action = Action.INPUT,
             pred = BasicRules.xpred(".[" + standardEditTextPredicate + "and number(@inputType) = $INPUT_TYPE_NONE]"),
-            prio = BasicRules.fprio(BigDecimal(0.1))
+            prio = BasicRules.fprio(BigDecimal(0.1)),
         )
 
     fun defaultTextClickDeprioritizeRule(): MultiplicativeRule =
@@ -268,7 +268,7 @@ object InputRules {
             description = "De-prioritized the clicking of text elements",
             action = Action.CLICK,
             pred = BasicRules.xpred(".[$standardEditTextPredicate]"),
-            prio = BasicRules.fprio(BigDecimal(0.1))
+            prio = BasicRules.fprio(BigDecimal(0.1)),
         )
 
     fun defaultTextClickAtPositionDeprioritizeRule(): MultiplicativeRule =
@@ -276,6 +276,6 @@ object InputRules {
             description = "De-prioritized the clicking of text elements",
             action = Action.CLICK_ON_ITEM_AT_POSITION,
             pred = BasicRules.xpred(".[$standardEditTextPredicate]"),
-            prio = BasicRules.fprio(BigDecimal(0.1))
+            prio = BasicRules.fprio(BigDecimal(0.1)),
         )
 }

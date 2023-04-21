@@ -11,7 +11,7 @@ class EspressoViewVisibilityPredicate : ViewVisibilityPredicate {
 
     override fun test(v: View): Boolean {
         return ViewMatchers.isDisplayingAtLeast(
-            ESPRESSO_VISIBILITY_THRESHOLD_FOR_ACTIONS
+            ESPRESSO_VISIBILITY_THRESHOLD_FOR_ACTIONS,
         ).matches(v)
     }
 

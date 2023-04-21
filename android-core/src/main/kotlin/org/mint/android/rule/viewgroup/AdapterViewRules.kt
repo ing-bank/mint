@@ -20,7 +20,7 @@ object AdapterViewRules {
 
         do {
             newPosition = random.nextInt(
-                s.node.getAttribute("itemCount").toInt()
+                s.node.getAttribute("itemCount").toInt(),
             ).toString()
         } while (newPosition == currentlySelectedItem)
 
@@ -37,10 +37,10 @@ object AdapterViewRules {
                 ".[@isDisplayed = 'true' " +
                     "and @isClickable = 'true' " +
                     "and @isSpinner = 'true' " +
-                    "]"
+                    "]",
             ),
             itemPosition = randomPositionInList,
-            prio = fprio(BigDecimal(1))
+            prio = fprio(BigDecimal(1)),
         )
     }
 
@@ -54,10 +54,10 @@ object AdapterViewRules {
                     "and @isAdapterView = 'true' " +
                     "and not(@isSpinner = 'true') " +
                     "and @resourceName" +
-                    "]"
+                    "]",
             ),
             itemPosition = randomPositionInList,
-            prio = fprio(BigDecimal(1))
+            prio = fprio(BigDecimal(1)),
         )
     }
 
@@ -69,9 +69,9 @@ object AdapterViewRules {
                 ".[@isDisplayed = 'true' " +
                     "and @isClickable = 'true' " +
                     "and @isSpinner = 'true' " +
-                    "]"
+                    "]",
             ),
-            prio = fprio(BigDecimal(0.01))
+            prio = fprio(BigDecimal(0.01)),
         )
 
     fun adapterViewSimpleClickDeprioritizeRule(): MultiplicativeRule =
@@ -82,8 +82,8 @@ object AdapterViewRules {
                 ".[@isDisplayed = 'true' " +
                     "and @isClickable = 'true' " +
                     "and @isAdapterView = 'true' " +
-                    "]"
+                    "]",
             ),
-            prio = fprio(BigDecimal(0.01))
+            prio = fprio(BigDecimal(0.01)),
         )
 }

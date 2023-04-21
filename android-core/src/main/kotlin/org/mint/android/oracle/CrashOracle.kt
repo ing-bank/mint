@@ -18,7 +18,7 @@ class CrashOracle : Oracle<AndroidState> {
         const val version: String = "1"
         const val description: String = "An oracle that detects app crashes"
         val categories: Set<OracleCategory> = setOf(
-            OracleCategory.STABILITY
+            OracleCategory.STABILITY,
         )
         const val decision = "decision"
         const val verdict = "verdict"

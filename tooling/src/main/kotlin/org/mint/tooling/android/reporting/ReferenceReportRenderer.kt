@@ -67,7 +67,7 @@ class ReferenceReportRenderer(private val logger: Logger) : ReportRenderer {
                 dir = dir,
                 imgdir = imgdir,
                 session = session,
-                sequences = sutSessionToSequence
+                sequences = sutSessionToSequence,
             ).invoke()
         }
         return dir

@@ -8,7 +8,7 @@ data class GenericRule(
     override val description: String,
     override val action: Action,
     val pred: (AndroidState) -> Boolean,
-    val prio: (AndroidState) -> BigDecimal
+    val prio: (AndroidState) -> BigDecimal,
 ) : BaseRule() {
     override fun priority(): (AndroidState) -> BigDecimal = prio
     override fun predicate(): (AndroidState) -> Boolean = pred

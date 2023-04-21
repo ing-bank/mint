@@ -9,7 +9,7 @@ data class ItemWithTagClickRule(
     override val action: Action,
     val pred: (AndroidState) -> Boolean,
     val itemTag: (AndroidState) -> String = { "" },
-    val prio: (AndroidState) -> BigDecimal
+    val prio: (AndroidState) -> BigDecimal,
 ) : BaseItemWithTagClickRule() {
     override fun priority(): (AndroidState) -> BigDecimal = prio
     override fun predicate(): (AndroidState) -> Boolean = pred

@@ -23,18 +23,18 @@ data class TestCtx(
     override val applicationMonitors: Set<ApplicationMonitor<*>>,
     val stepState: List<AndroidState>,
     val assertions: Map<Int, Set<XQueryPredicate>>,
-    val invariants: Set<XQueryPredicate>
+    val invariants: Set<XQueryPredicate>,
 ) : AndroidCtx {
     /** Append the given state to the series of states given to the MINT tool */
     fun withStep(state: AndroidState): TestCtx = copy(
-        stepState = stepState + state
+        stepState = stepState + state,
     )
 
     /** Assign a predicate to a given step. Note that we start counting at 1 (for the first step). */
     fun withPredicate(step: Int, predicate: XQueryPredicate): TestCtx = copy(
-        assertions = assertions.plus(Pair(step, assertions.getOrDefaultExt(step, setOf()) + predicate))
+        assertions = assertions.plus(Pair(step, assertions.getOrDefaultExt(step, setOf()) + predicate)),
     )
     fun withInvariant(predicate: XQueryPredicate): TestCtx = copy(
-        invariants = invariants + predicate
+        invariants = invariants + predicate,
     )
 }

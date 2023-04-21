@@ -10,7 +10,7 @@ data class PickerInputRule(
     override val action: Action,
     val pred: (AndroidState) -> Boolean,
     val prio: (AndroidState) -> BigDecimal,
-    val gen: (AndroidState) -> String
+    val gen: (AndroidState) -> String,
 ) :
     BaseInputRule() {
     override fun generate(): (AndroidState) -> String = gen

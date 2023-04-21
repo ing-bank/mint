@@ -17,6 +17,6 @@ object DeviceRotationChange {
 
     enum class Rotation {
         PORTRAIT,
-        LANDSCAPE
+        LANDSCAPE,
     }
 }

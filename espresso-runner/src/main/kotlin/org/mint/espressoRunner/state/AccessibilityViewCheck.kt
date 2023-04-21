@@ -70,8 +70,8 @@ internal object AccessibilityViewCheck {
             attributes = mutableListOf(
                 Pair(ATTR_RESULT, "${result.type}"),
                 Pair(ATTR_TYPE, result.sourceCheckClass.simpleName),
-                Pair(ATTR_MESSAGE, result.getMessage(Locale.ENGLISH).toString())
-            )
+                Pair(ATTR_MESSAGE, result.getMessage(Locale.ENGLISH).toString()),
+            ),
         )
 
         result.metadata?.let { metadata ->
@@ -80,20 +80,20 @@ internal object AccessibilityViewCheck {
     }
 
     private fun Node.appendMetadata(
-        metadata: ResultMetadata
+        metadata: ResultMetadata,
     ) {
         val attributes = ArrayList<Pair<String, String>>()
         MetadataKeys.values().forEach { key ->
             if (metadata.containsKey(key.name)) {
                 attributes.add(
-                    Pair(key.name.kebabCase(), metadata.get(key))
+                    Pair(key.name.kebabCase(), metadata.get(key)),
                 )
             }
         }
 
         appendChild(
             ATTR_METADATA,
-            attributes = attributes
+            attributes = attributes,
         )
     }
 
@@ -211,6 +211,6 @@ internal object AccessibilityViewCheck {
         KEY_UNEXPOSED_TEXT(String::class),
         KEY_UNEXPOSED_TEXTS(Array<String>::class),
         KEY_OCR_BOUNDS(String::class),
-        KEY_TEXT_DETECTED_IN_IMAGE_VIEW(String::class)
+        KEY_TEXT_DETECTED_IN_IMAGE_VIEW(String::class),
     }
 }

@@ -16,7 +16,7 @@ class AndroidDeviceOracle : Oracle<AndroidState> {
 
         val CATEGORIES: Set<OracleCategory> = setOf(
             OracleCategory.STABILITY,
-            OracleCategory.PERFORMANCE
+            OracleCategory.PERFORMANCE,
         )
     }
 
@@ -26,7 +26,7 @@ class AndroidDeviceOracle : Oracle<AndroidState> {
     override val categories: Set<OracleCategory> = CATEGORIES
 
     override fun probes(): Set<Class<out Probe<AndroidState>>> = setOf(
-        CPUProbe::class.javaObjectType
+        CPUProbe::class.javaObjectType,
     )
 
     override fun eval(state: AndroidState): AndroidState = runBlocking {

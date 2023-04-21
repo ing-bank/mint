@@ -20,7 +20,7 @@ class MintClassRunner(testClass: Class<*>?) : Suite(testClass, runners(testClass
             val l = testClass.getAnnotatedFieldValues(
                 target,
                 Rule::class.java,
-                TestRule::class.java
+                TestRule::class.java,
             ).filterIsInstance<MINTRule>().first().numberOfSequences()
 
             val testRunners: MutableList<MintTestRunner> = mutableListOf()
@@ -31,9 +31,9 @@ class MintClassRunner(testClass: Class<*>?) : Suite(testClass, runners(testClass
                         TestWithParameters(
                             "[${testClass.name}]",
                             testClass,
-                            listOf("$i")
-                        )
-                    )
+                            listOf("$i"),
+                        ),
+                    ),
                 )
             }
 

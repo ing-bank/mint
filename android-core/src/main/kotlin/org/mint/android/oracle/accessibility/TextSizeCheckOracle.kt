@@ -9,6 +9,6 @@ class TextSizeCheckOracle : AccessibilityOracle() {
     override val description = "Looks for text that may have visibility problems " +
         "related to text scaling."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

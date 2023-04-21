@@ -33,7 +33,7 @@ class MINTRule(private val mint: MINT? = org.mint.MINT.Default) : MINTApi, Exter
 
         return metadataRule.apply(
             super.apply(stmt, description),
-            description
+            description,
         )
     }
 

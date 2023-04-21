@@ -41,7 +41,7 @@ abstract class AccessibilityOracle : Oracle<AndroidState> {
         val viewChecks = state.queryViewChecks()
         if (viewChecks.isEmpty()) {
             state.node.addVerdict(
-                Verdict.OK
+                Verdict.OK,
             )
         }
         viewChecks.forEach { viewCheck ->
@@ -49,17 +49,17 @@ abstract class AccessibilityOracle : Oracle<AndroidState> {
             if (viewCheck.isError()) {
                 viewNode?.addVerdict(
                     Verdict.FAIL,
-                    message = viewCheck.attribute(ATTR_MESSAGE)
+                    message = viewCheck.attribute(ATTR_MESSAGE),
                 )
             } else if (viewCheck.isWarning()) {
                 viewNode?.addVerdict(
                     Verdict.WARNING,
-                    message = viewCheck.attribute(ATTR_MESSAGE)
+                    message = viewCheck.attribute(ATTR_MESSAGE),
                 )
             } else if (viewCheck.isInfo() || viewCheck.isResolved()) {
                 viewNode?.addVerdict(
                     Verdict.INFO,
-                    message = viewCheck.attribute(ATTR_MESSAGE)
+                    message = viewCheck.attribute(ATTR_MESSAGE),
                 )
             }
         }
@@ -131,24 +131,24 @@ abstract class AccessibilityOracle : Oracle<AndroidState> {
      */
     private fun Node.addVerdict(
         verdict: Verdict,
-        message: String? = null
+        message: String? = null,
     ) {
         val verdictAttributes = mutableListOf(
-            Pair(ATTR_DECISION, verdict.name)
+            Pair(ATTR_DECISION, verdict.name),
         )
 
         message?.let { value ->
             verdictAttributes.add(
-                Pair(ATTR_MESSAGE, value)
+                Pair(ATTR_MESSAGE, value),
             )
         }
 
         appendChild(
             tagName = name,
-            namespace = AndroidConstants.ORACLE_NS
+            namespace = AndroidConstants.ORACLE_NS,
         ).appendChild(
             tagName = ELEMENT_VERDICT,
-            attributes = verdictAttributes
+            attributes = verdictAttributes,
         )
     }
 }

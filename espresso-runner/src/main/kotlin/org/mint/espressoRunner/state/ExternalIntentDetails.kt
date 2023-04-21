@@ -12,7 +12,7 @@ import org.w3c.dom.Element
 class ExternalIntentDetails(val node: Element) : VerificationMode {
     override fun verify(
         externalIntentMatcher: Matcher<Intent>,
-        recordedIntents: MutableList<VerifiableIntent>?
+        recordedIntents: MutableList<VerifiableIntent>?,
     ) {
         for (verifiableIntent in recordedIntents!!) {
             val intent = verifiableIntent.intent

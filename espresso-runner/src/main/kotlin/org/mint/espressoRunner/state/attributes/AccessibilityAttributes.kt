@@ -23,7 +23,7 @@ internal object AccessibilityAttributes {
         node.setAttribute("labelFor", view.labelFor.toString())
         node.setAttribute(
             "isImportantForAccessibility",
-            view.isImportantForAccessibility.toString()
+            view.isImportantForAccessibility.toString(),
         )
         // for touch target size calculation, minimum 48x48dp is recommended
         // https://developer.android.com/guide/topics/ui/accessibility/apps#large-controls
@@ -73,44 +73,44 @@ internal object AccessibilityAttributes {
             Pair("isPassword", "${accessibilityNodeInfo.isPassword}"),
             Pair("isSelected", "${accessibilityNodeInfo.isSelected}"),
             Pair("isScrollable", "${accessibilityNodeInfo.isScrollable}"),
-            Pair("isVisibleToUser", "${accessibilityNodeInfo.isVisibleToUser}")
+            Pair("isVisibleToUser", "${accessibilityNodeInfo.isVisibleToUser}"),
         )
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             accessibilityAttributes.add(
                 Pair(
                     "isContextClickable",
-                    "${accessibilityNodeInfo.isContextClickable}"
-                )
+                    "${accessibilityNodeInfo.isContextClickable}",
+                ),
             )
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             accessibilityAttributes.add(
                 Pair(
                     "isImportantForAccessibility",
-                    "${accessibilityNodeInfo.isImportantForAccessibility}"
-                )
+                    "${accessibilityNodeInfo.isImportantForAccessibility}",
+                ),
             )
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             accessibilityAttributes.add(
-                Pair("isShowingHintText", "${accessibilityNodeInfo.isShowingHintText}")
+                Pair("isShowingHintText", "${accessibilityNodeInfo.isShowingHintText}"),
             )
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             accessibilityAttributes.add(
-                Pair("isScreenReaderFocusable", "${accessibilityNodeInfo.isScreenReaderFocusable}")
+                Pair("isScreenReaderFocusable", "${accessibilityNodeInfo.isScreenReaderFocusable}"),
             )
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             accessibilityAttributes.add(
-                Pair("isTextEntryKey", "${accessibilityNodeInfo.isTextEntryKey}")
+                Pair("isTextEntryKey", "${accessibilityNodeInfo.isTextEntryKey}"),
             )
         }
 
         node.appendChild(
             "accessibility-node-info",
-            attributes = accessibilityAttributes
+            attributes = accessibilityAttributes,
         )
     }
 }

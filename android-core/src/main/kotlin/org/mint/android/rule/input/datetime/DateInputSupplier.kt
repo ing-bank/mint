@@ -36,7 +36,7 @@ object DateInputSupplier {
     private fun suppliers(random: Random) = listOf(
         pastDateInput(random),
         futureDateInput(random),
-        leapYearDateInput(random)
+        leapYearDateInput(random),
     )
 
     private val dateFormatter: (Locale) -> DateFormat = {
@@ -50,7 +50,7 @@ object DateInputSupplier {
         val sups = suppliers(random)
         return defaultDateFormatter.format(
             sups[random.nextInt(sups.size)]
-                .time
+                .time,
         )
     }
 
@@ -58,7 +58,7 @@ object DateInputSupplier {
         val sups = suppliers(random)
         return dateFormatter.invoke(l).format(
             sups[random.nextInt(sups.size)]
-                .time
+                .time,
         )
     }
 }

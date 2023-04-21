@@ -21,7 +21,7 @@ class AndroidLogOracle : Oracle<AndroidState> {
         const val description: String = "An oracle that considers the Android (system) log"
         val categories: Set<OracleCategory> = setOf(
             OracleCategory.STABILITY, // Most (error) log entries are about crashes
-            OracleCategory.PERFORMANCE // Some log entries complain about slow render times
+            OracleCategory.PERFORMANCE, // Some log entries complain about slow render times
         )
         const val decision = "decision"
         const val verdict = "verdict"
@@ -32,7 +32,7 @@ class AndroidLogOracle : Oracle<AndroidState> {
     override val categories: Set<OracleCategory> = AndroidLogOracle.categories
 
     override fun probes(): Set<Class<out Probe<AndroidState>>> = setOf(
-        LogCatProbe::class.javaObjectType
+        LogCatProbe::class.javaObjectType,
     )
 
     override fun eval(state: AndroidState): AndroidState = runBlocking {
