@@ -16,6 +16,11 @@ If that's the case, MINT is something for you!
 * MINT helps interpreting the state of the System Under Test (SUT). 
 
 ## What is MINT
+
+A recording demonstrating how MINT can be used, including a high level explanation on how it works, has been shown at NWO ICT Open 2023. You can find this recording by clicking on the image below. 
+
+[![A demo and explanation of MINT as shown on ICT.Open 2023](https://img.youtube.com/vi/VbTdEc23yX8/0.jpg)](https://www.youtube.com/watch?v=VbTdEc23yX8)
+
 MINT is a testing tool complementary to existing testing tooling. It uses a probabilistic model that applies (customizable) rules to detect and (de)prioritize UI interactions during action selection. Because of this, we can automatically explore native Android applications without requiring human interaction to create and maintain test scripts. During exploration, we leverage so called oracles to measure the desired behavior of the system under test. These oracles produce verdicts, which records something about a specific of the SUT. All these oracles are composable, providing a continuous and multidimensional measurement of your SUT. A reporting tool allows for interactive exploration of the recorded system interactions, providing insight in the specific behaviour of the SUT. By interpreting these verdicts, the general quality and the CX then be improved. This work draws inspiration from the [TESTAR](https://github.com/TESTARtool/TESTAR_dev) community. 
 
 Main characteristics of MINT:  
@@ -35,7 +40,7 @@ We believe in tooling made by engineers, designed for engineers, that is Open So
 
 We include engineers in an early stage, we have conducted interviews exploring the current problems and solutions. We want to be in contact with our users as much as possible: all input is valuable. 
 
-An early prototype related to the approach this tool applies is published as _Scriptless GUI testing on Android and iOS applications_ published at the _22nd IEEE International Conference on Software Quality, Reliability, and Security (QRS 2022)_.
+An early prototype related to the approach this tool applies is published as [_Scriptless GUI testing on Android and iOS applications_ published at the _22nd IEEE International Conference on Software Quality, Reliability, and Security (QRS 2022)_](https://doi.org/10.1109/QRS57517.2022.00113).
 
 ## Development roadmap
 MINT currently only support Native Android apps by providing a library built on top of Espresso. 
