@@ -10,7 +10,7 @@ import org.w3c.dom.Element
 
 open class ITTestLoop(
     private val _ctx: TestCtx,
-    m: TestMetadata = TestMetadata("", "", "")
+    m: TestMetadata = TestMetadata("", "", ""),
 ) : AndroidLoop(_ctx, "1", m) {
     private var stepCount = 1
 
@@ -30,7 +30,7 @@ open class ITTestLoop(
                     ctx.applicationMonitors,
                     listOf(),
                     mapOf(),
-                    setOf()
+                    setOf(),
                 )
             }
         }

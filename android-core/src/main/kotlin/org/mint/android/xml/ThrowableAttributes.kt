@@ -15,7 +15,7 @@ object ThrowableAttributes {
             .createCDATASection(
                 throwable.stackTrace
                     .take(5)
-                    .joinToString(separator = "\nat ", prefix = "at ")
+                    .joinToString(separator = "\nat ", prefix = "at "),
             )
         node.appendChild(truncatedStacktrace)
 

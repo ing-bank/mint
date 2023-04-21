@@ -47,7 +47,7 @@ class XQueryPredicateTest : StateTest() {
                                 resourceName=""
                                 selected="true"/>
                      </org.mint.android.rule.GenericRule>
-            """.trimIndent()
+            """.trimIndent(),
         )
         assertTrue(XQueryPredicate("count(//action:click[@selected = 'true']) = 1").invoke(s))
     }

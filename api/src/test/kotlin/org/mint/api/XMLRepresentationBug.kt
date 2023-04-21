@@ -39,9 +39,9 @@ class XMLRepresentationBug : StateBuilder {
                     <View>
                       <View id="a" isClickable="true" isDisplayed="true"/>
                     </View>
-                                """.trimIndent()
-                            )
-                        )
+                                """.trimIndent(),
+                            ),
+                        ),
                 )
             }
             .build { e -> Assert.fail(e) }!!
@@ -76,7 +76,7 @@ class XMLRepresentationBug : StateBuilder {
 
         assertEquals(
             AndroidStateUtils.renderXML(state!!.node),
-            AndroidStateUtils.renderXML(st2.node)
+            AndroidStateUtils.renderXML(st2.node),
         )
     }
 

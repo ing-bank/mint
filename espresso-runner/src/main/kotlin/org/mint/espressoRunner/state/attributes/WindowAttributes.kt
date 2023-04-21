@@ -20,7 +20,7 @@ object WindowAttributes {
                 (
                     this.flags and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                         != WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                    ).toString()
+                    ).toString(),
             )
 
             val espressoRoot =

@@ -87,8 +87,8 @@ interface ReportRenderer {
             rules.add(
                 Rule(
                     rule.attribute("name")!!,
-                    rule.attribute("description")!!
-                )
+                    rule.attribute("description")!!,
+                ),
             )
         }
         return rules
@@ -104,8 +104,8 @@ interface ReportRenderer {
                 Oracle(
                     oracle.attribute("name")!!,
                     oracle.attribute("description")!!,
-                    oracle.attribute("categories")!!
-                )
+                    oracle.attribute("categories")!!,
+                ),
             )
         }
         return oracles

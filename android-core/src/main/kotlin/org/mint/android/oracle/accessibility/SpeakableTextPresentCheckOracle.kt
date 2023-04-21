@@ -8,6 +8,6 @@ class SpeakableTextPresentCheckOracle : AccessibilityOracle() {
     override val version = "1.0.0"
     override val description = "Checks that items that require speakable text have some."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

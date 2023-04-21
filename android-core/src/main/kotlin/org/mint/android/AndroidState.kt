@@ -82,8 +82,8 @@ data class AndroidState(val node: Node, val rnd: java.util.Random) : SUTState<An
     /** Generate a cryptographic hash in base36 representing the identity of the AndroidState, resulting in a stable naming scheme */
     fun filenameHash(): String = AndroidStateUtils.toBase36(
         AndroidStateUtils.hash(
-            AndroidStateUtils.renderXML(node).encodeToByteArray()
-        )
+            AndroidStateUtils.renderXML(node).encodeToByteArray(),
+        ),
     )
 
     /** Create an element related to the owner document of the this state. It is not attached to the document */

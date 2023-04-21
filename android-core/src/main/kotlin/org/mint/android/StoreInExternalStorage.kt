@@ -10,15 +10,15 @@ import java.util.*
 object StoreInExternalStorage {
     fun mintFolder() = File(
         InstrumentationRegistry.getInstrumentation().targetContext.getExternalFilesDir(
-            Environment.DIRECTORY_DOCUMENTS
+            Environment.DIRECTORY_DOCUMENTS,
         ),
-        "mint"
+        "mint",
     )
 
     fun apply(
         repo: StateRepository<AndroidState>,
         reportID: String = UUID.randomUUID().toString(),
-        target: File = mintFolder()
+        target: File = mintFolder(),
     ): File {
         val states = repo.query(AnyQuery)
 

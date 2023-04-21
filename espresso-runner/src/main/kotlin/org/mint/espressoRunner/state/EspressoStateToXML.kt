@@ -62,8 +62,8 @@ object EspressoStateToXML {
                     toXML(
                         doc,
                         view.getChildAt(i),
-                        positionInViewHierarchy.plus(".$i")
-                    )
+                        positionInViewHierarchy.plus(".$i"),
+                    ),
                 )
             }
         }
@@ -76,7 +76,7 @@ object EspressoStateToXML {
     private fun applyResourceAttributes(
         viewElement: Element,
         view: View,
-        positionInViewHierarchy: String
+        positionInViewHierarchy: String,
     ) {
         viewElement.setUserData("origin", view, null)
         viewElement.setAttribute("positionInViewHierarchy", positionInViewHierarchy)
@@ -90,11 +90,11 @@ object EspressoStateToXML {
             try {
                 viewElement.setAttribute(
                     "resourceName",
-                    viewResources.getResourceEntryName(viewId)
+                    viewResources.getResourceEntryName(viewId),
                 )
                 viewElement.setAttribute(
                     "package",
-                    viewResources.getResourcePackageName(viewId)
+                    viewResources.getResourcePackageName(viewId),
                 )
             } catch (e: Resources.NotFoundException) {
                 println("Resource with id=$viewId not found")
@@ -108,14 +108,14 @@ object EspressoStateToXML {
      */
     private fun applyDetailedViewAttributes(
         viewElement: Element,
-        view: View
+        view: View,
     ) {
         ViewAttributes.apply(viewElement, view)
     }
 
     private fun applyWindowAttributes(
         viewElement: Element,
-        view: View
+        view: View,
     ) {
         viewElement.setAttribute("hasWindowFocus", view.hasWindowFocus().toString())
     }

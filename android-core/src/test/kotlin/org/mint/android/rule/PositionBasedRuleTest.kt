@@ -43,7 +43,7 @@ class PositionBasedRuleTest : StateTest() {
             <View isClickable="true"/>
           </y>
         </x>
-            """.trimIndent()
+            """.trimIndent(),
         )
         val rule = BasicRules.clickableRuleBasedOnPositionInViewHierarchy()
 
@@ -80,7 +80,7 @@ class PositionBasedRuleTest : StateTest() {
             <View isClickable="true"/>
           </y>
         </View>
-            """.trimIndent()
+            """.trimIndent(),
         )
         val rule = BasicRules.clickableRuleBasedOnPositionInViewHierarchy()
 

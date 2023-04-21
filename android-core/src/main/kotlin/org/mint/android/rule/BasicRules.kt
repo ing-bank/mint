@@ -27,8 +27,8 @@ object BasicRules {
                 action = rule.action,
                 pred = rule.predicate(),
                 prio = xprio(
-                    "1 div (1 + count(./abstract-a:state/correlate:historical//action:${rule.action.tagName}))"
-                )
+                    "1 div (1 + count(./abstract-a:state/correlate:historical//action:${rule.action.tagName}))",
+                ),
             )
         }
 
@@ -47,7 +47,7 @@ object BasicRules {
             description = "Click on any widget that has 'isClickable' as true and is displayed",
             action = Action.CLICK,
             pred = xpred(".[@isClickable = 'true' and @isDisplayed = 'true' ]"),
-            prio = defaultPrio
+            prio = defaultPrio,
         )
 
     fun scrollingClickableRule(): PositionBasedRule =
@@ -67,10 +67,10 @@ object BasicRules {
                     // ViewPager requires a different type of scroll action
                     "and not(ancestor::*[@isViewPager = 'true' ]) " +
                     // only widgets contained by a scrollable layout can be scrolled to
-                    "and ancestor::*[@isScrollable = 'true'] ]"
+                    "and ancestor::*[@isScrollable = 'true'] ]",
             ),
             prio = defaultPrio,
-            itemPosition = positionInViewHierarchy
+            itemPosition = positionInViewHierarchy,
         )
 
     // This will only work in the case of items that have been attributed tags.
@@ -82,10 +82,10 @@ object BasicRules {
                 ".[@isDisplayed= 'true' " +
                     "and @isClickable= 'true' " +
                     "and @tag != '' " +
-                    "]"
+                    "]",
             ),
             itemTag = viewTag,
-            prio = defaultPrio
+            prio = defaultPrio,
         )
 
     fun clickableRuleBasedOnPositionInViewHierarchy(): PositionBasedRule =
@@ -96,10 +96,10 @@ object BasicRules {
                 ".[@isDisplayed= 'true' " +
                     "and @isClickable= 'true' " +
                     "and not(exists(@tag))" +
-                    "]"
+                    "]",
             ),
             itemPosition = positionInViewHierarchy,
-            prio = defaultPrio
+            prio = defaultPrio,
         )
 
     fun clickableRuleBasedOnPositionInViewHierarchyForPopupItem(): PositionBasedRule =
@@ -110,10 +110,10 @@ object BasicRules {
                 ".[@isDisplayed= 'true' " +
                     "and @isClickable= 'true' " +
                     "and ancestor::*[@isPlatformPopup = 'true']" +
-                    "]"
+                    "]",
             ),
             itemPosition = positionInViewHierarchy,
-            prio = defaultPrio
+            prio = defaultPrio,
         )
 
     fun deprioritizeClickingOnPopupItemOnCurrentRoot(): MultiplicativeRule =
@@ -124,9 +124,9 @@ object BasicRules {
                 ".[@isDisplayed= 'true' " +
                     "and @isClickable= 'true' " +
                     "and ancestor::*[@isPlatformPopup = 'true']" +
-                    "]"
+                    "]",
             ),
-            prio = fprio(BigDecimal(0.01))
+            prio = fprio(BigDecimal(0.01)),
         )
 
     fun deviceRotationRule(): GenericRule =
@@ -134,7 +134,7 @@ object BasicRules {
             description = "Change the Device Rotation to check the responsiveness of the UI.",
             action = Action.DEVICE_ROTATION_CHANGE,
             pred = xpred(".[@isDisplayed = 'true' and @class = 'com.android.internal.policy.DecorView']"),
-            prio = fprio(BigDecimal(0.05))
+            prio = fprio(BigDecimal(0.05)),
         )
 
     fun deviceThemeRule(): GenericRule =
@@ -142,6 +142,6 @@ object BasicRules {
             description = "Change the Device Theme to check the responsiveness of the UI.",
             action = Action.DEVICE_THEME_CHANGE,
             pred = xpred(".[@isDisplayed = 'true' and @class = 'com.android.internal.policy.DecorView']"),
-            prio = fprio(BigDecimal(0.05))
+            prio = fprio(BigDecimal(0.05)),
         )
 }

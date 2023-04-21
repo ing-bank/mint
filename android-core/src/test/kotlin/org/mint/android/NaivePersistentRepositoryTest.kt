@@ -94,7 +94,7 @@ class NaivePersistentRepositoryTest : StateBuilder {
         for (key in repo.inMemoryRepository.abstractState.keys) {
             assertEquals(
                 repo.inMemoryRepository.abstractState.get(key)!!.size,
-                repo2.inMemoryRepository.abstractState.get(key)!!.size
+                repo2.inMemoryRepository.abstractState.get(key)!!.size,
             )
         }
 
@@ -103,7 +103,7 @@ class NaivePersistentRepositoryTest : StateBuilder {
             for (hashKey in repo.inMemoryRepository.abstractActions.get(actionKey)!!.keys) {
                 assertEquals(
                     repo.inMemoryRepository.abstractActions.get(actionKey)!!.get(hashKey)!!.size,
-                    repo2.inMemoryRepository.abstractActions.get(actionKey)!!.get(hashKey)!!.size
+                    repo2.inMemoryRepository.abstractActions.get(actionKey)!!.get(hashKey)!!.size,
                 )
             }
         }

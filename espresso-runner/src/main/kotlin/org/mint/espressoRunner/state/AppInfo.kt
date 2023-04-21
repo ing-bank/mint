@@ -18,7 +18,7 @@ internal object AppInfo {
             try {
                 val packageInfo = packageManager.getPackageInfo(
                     applicationPackage,
-                    PackageManager.GET_PERMISSIONS
+                    PackageManager.GET_PERMISSIONS,
                 )
 
                 val applicationName =
@@ -31,7 +31,7 @@ internal object AppInfo {
                         applicationPackage,
                         applicationName,
                         applicationVersion,
-                        requestedPermissions
+                        requestedPermissions,
                     )
             } catch (e: PackageManager.NameNotFoundException) {
                 println("Could not retrieve the app info, $e")
@@ -43,7 +43,7 @@ internal object AppInfo {
         appInfo!!.applicationPackageName?.let {
             appInfoNode.setAttribute(
                 "applicationPackageName",
-                it
+                it,
             )
         }
         appInfo!!.applicationName?.let { appInfoNode.setAttribute("applicationName", it) }
@@ -65,6 +65,6 @@ internal object AppInfo {
         val applicationPackageName: String?,
         val applicationName: String?,
         val applicationVersion: String?,
-        val requestedPermissions: Array<String>?
+        val requestedPermissions: Array<String>?,
     )
 }

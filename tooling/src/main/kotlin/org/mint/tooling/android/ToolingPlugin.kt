@@ -47,15 +47,15 @@ class ToolingPlugin : Plugin<Project> {
                             (any as DirectoryProperty?)?.let {
                                 collectReportingDataTask?.setProperty(
                                     "targetDir",
-                                    it.get().asFile.toString()
+                                    it.get().asFile.toString(),
                                 )
                                 junitReportEnrichingTask?.setProperty(
                                     "junitResults",
-                                    it.get().asFile.toString()
+                                    it.get().asFile.toString(),
                                 )
                                 junitReportEnrichingTask?.setProperty(
                                     "mintResults",
-                                    it.get().asFile.resolve("mint").toString()
+                                    it.get().asFile.resolve("mint").toString(),
                                 )
                             }
                         }
@@ -102,7 +102,7 @@ class ToolingPlugin : Plugin<Project> {
         }
         project.tasks.register(
             JUNIT_REPORT_ENRICHING_TASK,
-            JunitReportEnrichingTask::class.java
+            JunitReportEnrichingTask::class.java,
         )
     }
 

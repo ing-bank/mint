@@ -15,7 +15,7 @@ data class MultiplicativeRule(
     override val description: String,
     override val action: Action,
     val pred: (AndroidState) -> Boolean,
-    val prio: (AndroidState) -> BigDecimal
+    val prio: (AndroidState) -> BigDecimal,
 ) : BaseRule() {
     override fun attributes(state: AndroidState, action: Element) {
         action.setAttribute(AndroidConstants.MODIFIER, AndroidConstants.MULTIPLICATIVE)

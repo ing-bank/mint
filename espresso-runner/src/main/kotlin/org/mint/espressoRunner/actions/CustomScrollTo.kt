@@ -26,8 +26,8 @@ class CustomScrollTo : ViewAction {
                 isAssignableFrom(ScrollView::class.java),
                 isAssignableFrom(HorizontalScrollView::class.java),
                 isAssignableFrom(ListView::class.java),
-                isAssignableFrom(NestedScrollView::class.java)
-            )
+                isAssignableFrom(NestedScrollView::class.java),
+            ),
         )
     }
 

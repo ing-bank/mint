@@ -13,10 +13,10 @@ object PickerInputRules {
             pred = BasicRules.xpred(
                 ".[@isDisplayed = 'true' " +
                     "and @isDatePicker = 'true' " +
-                    "]"
+                    "]",
             ),
             prio = BasicRules.fprio(BigDecimal(1)),
-            gen = { DateInputSupplier.get(it.rnd) }
+            gen = { DateInputSupplier.get(it.rnd) },
         )
     }
 
@@ -27,10 +27,10 @@ object PickerInputRules {
             pred = BasicRules.xpred(
                 ".[@isDisplayed = 'true' " +
                     "and @isTimePicker = 'true' " +
-                    "]"
+                    "]",
             ),
             prio = BasicRules.fprio(BigDecimal(1)),
-            gen = { TimeInputSupplier.get(it.rnd) }
+            gen = { TimeInputSupplier.get(it.rnd) },
         )
     }
 }

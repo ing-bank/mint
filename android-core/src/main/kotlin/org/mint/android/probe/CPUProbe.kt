@@ -76,7 +76,7 @@ class CPUProbe : AndroidProbe {
     override val version: String = VERSION
     override val description: String = DESCRIPTION
     override val categories: Set<ProbeCategory> = setOf(
-        ProbeTimingCategory.PRE_ACTION
+        ProbeTimingCategory.PRE_ACTION,
     )
 
     private var targetApplicationPackageName: String? = null
@@ -203,8 +203,8 @@ class CPUProbe : AndroidProbe {
                             pid = matchResult.groupValues[2].trim(),
                             packageName = matchResult.groupValues[3].trimColon(),
                             userLoad = matchResult.groupValues[4].trimPercentage(),
-                            kernelLoad = matchResult.groupValues[7].trimPercentage()
-                        )
+                            kernelLoad = matchResult.groupValues[7].trimPercentage(),
+                        ),
                     )
                 }
 
@@ -215,8 +215,8 @@ class CPUProbe : AndroidProbe {
                             pid = "",
                             packageName = matchResult.groupValues[2].trim(),
                             userLoad = matchResult.groupValues[3].trimPercentage(),
-                            kernelLoad = matchResult.groupValues[6].trimPercentage()
-                        )
+                            kernelLoad = matchResult.groupValues[6].trimPercentage(),
+                        ),
                     )
                 }
             }
@@ -257,6 +257,6 @@ class CPUProbe : AndroidProbe {
         val pid: String,
         val packageName: String,
         val userLoad: String,
-        val kernelLoad: String
+        val kernelLoad: String,
     )
 }

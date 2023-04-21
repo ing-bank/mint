@@ -19,9 +19,9 @@ object BottomSheetRules {
             pred = xpred(
                 ".[@isDisplayed='true' " +
                     "and @isClickable='true'] " +
-                    "and ancestor::*[@resourceName='design_bottom_sheet']"
+                    "and ancestor::*[@resourceName='design_bottom_sheet']",
             ),
             itemPosition = positionInViewHierarchy,
-            prio = BasicRules.defaultPrio
+            prio = BasicRules.defaultPrio,
         )
 }

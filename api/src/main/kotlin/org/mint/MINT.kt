@@ -43,7 +43,7 @@ class MINT private constructor(
     private val ctx: AndroidCtx,
     private val numberOfSteps: Int,
     private val numberOfSequences: Int,
-    private val loopBuilder: (AndroidCtx, String, TestMetadata?) -> MintLoop<AndroidState>
+    private val loopBuilder: (AndroidCtx, String, TestMetadata?) -> MintLoop<AndroidState>,
 ) : MINTApi, AndroidConstants {
 
     private var currentSequence: String = ""
@@ -89,7 +89,7 @@ class MINT private constructor(
         private var rules: Set<Rule<AndroidState>> = setOf(),
         private var oracles: Set<Oracle<AndroidState>> = setOf(),
         private var loopBuilder: (AndroidCtx, String, TestMetadata?) -> MintLoop<AndroidState> = { ctx, seq, metadata -> EspressoLoop(ctx, seq, metadata) },
-        private var applicationMonitors: Set<ApplicationMonitor<*>> = setOf(EspressoFailureMonitor.instance)
+        private var applicationMonitors: Set<ApplicationMonitor<*>> = setOf(EspressoFailureMonitor.instance),
     ) {
 
         /** What state repository will be used to store application state? */
@@ -125,7 +125,7 @@ class MINT private constructor(
                 ViewGroupRules.scrollingPagerLeftRule(),
                 PickerInputRules.timePickerInputRule(),
                 PickerInputRules.datePickerInputRule(),
-                BottomSheetRules.clickableRuleBasedOnPositionInViewHierarchy()
+                BottomSheetRules.clickableRuleBasedOnPositionInViewHierarchy(),
             ) + GenericInputRule.rules +
                 GenericInputRule.deprioritizationRules
 
@@ -145,7 +145,7 @@ class MINT private constructor(
             this.oracles = this.oracles + setOf(
                 AndroidLogOracle(),
                 AndroidDeviceOracle(),
-                CrashOracle()
+                CrashOracle(),
             ) + AccessibilityOracles.all
         }
 
@@ -159,7 +159,7 @@ class MINT private constructor(
             return validateSteps().zip(
                 validateSequences(),
                 validateRules(),
-                validateOracles()
+                validateOracles(),
             ) { steps, sequences, rules, oracles ->
 
                 val cfgBuilder = { doc: Document ->
@@ -195,10 +195,10 @@ class MINT private constructor(
                             rules.map {
                                 mapOf(
                                     Pair("name", it.javaClass.canonicalName ?: "unknown"),
-                                    Pair("description", it.description)
+                                    Pair("description", it.description),
                                 )
-                            }
-                        )
+                            },
+                        ),
                     )
 
                     cfg.appendChild(
@@ -209,10 +209,10 @@ class MINT private constructor(
                                 mapOf(
                                     Pair("name", it.javaClass.canonicalName ?: "unknown"),
                                     Pair("description", it.description),
-                                    Pair("categories", it.categories.joinToString(", ") { x -> x.name })
+                                    Pair("categories", it.categories.joinToString(", ") { x -> x.name }),
                                 )
-                            }
-                        )
+                            },
+                        ),
                     )
 
                     cfg.appendChild(withItem("steps", "count", steps.toString()))
@@ -240,13 +240,13 @@ class MINT private constructor(
                     testMetadataBuilder,
                     rules,
                     oracles,
-                    applicationMonitors
+                    applicationMonitors,
                 )
                 MINT(
                     ctx,
                     steps,
                     sequences,
-                    loopBuilder
+                    loopBuilder,
                 )
             }
                 .tapLeft { e ->

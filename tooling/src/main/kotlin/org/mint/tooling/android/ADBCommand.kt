@@ -45,12 +45,12 @@ object ADBCommand {
                     collectStream(lc.inputStream),
                     collectStream(lc.errorStream),
                     "Command `$cmd` failed (no device connected?)",
-                    exitCode
+                    exitCode,
                 )
             } else {
                 ADBSuccess(
                     collectStream(lc.inputStream),
-                    exitCode
+                    exitCode,
                 )
             }
         } catch (e: Exception) {
@@ -58,7 +58,7 @@ object ADBCommand {
                 "n/a",
                 "n/a",
                 "An exception was thrown: ${e.message}",
-                exitCode
+                exitCode,
             )
         }
     }

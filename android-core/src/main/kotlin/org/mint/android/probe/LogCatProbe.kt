@@ -61,7 +61,7 @@ class LogCatProbe : AndroidProbe {
                             time = it.attribute(time) ?: "",
                             level = it.attribute(level) ?: "",
                             source = it.attribute(source) ?: "",
-                            message = it.attribute(message) ?: ""
+                            message = it.attribute(message) ?: "",
                         )
                     }
             }
@@ -71,7 +71,7 @@ class LogCatProbe : AndroidProbe {
     override val version: String = LogCatProbe.version
     override val description: String = LogCatProbe.description
     override val categories: Set<ProbeCategory> = setOf(
-        ProbeTimingCategory.PRE_ACTION
+        ProbeTimingCategory.PRE_ACTION,
     )
 
     // a rather arbitrary initial default capacity, which is is bigger than the default.
@@ -154,8 +154,8 @@ class LogCatProbe : AndroidProbe {
                                 it.groupValues[2],
                                 it.groupValues[3],
                                 it.groupValues[4],
-                                it.groupValues[5]
-                            )
+                                it.groupValues[5],
+                            ),
                         )
                     }
                 }
@@ -168,7 +168,7 @@ class LogCatProbe : AndroidProbe {
         val time: String,
         val level: String,
         val source: String,
-        val message: String
+        val message: String,
     ) {
         fun isError(): Boolean =
             // All error entries

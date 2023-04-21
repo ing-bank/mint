@@ -52,7 +52,7 @@ class ScreenshotTest {
         val screenshotFolder =
             File(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-                "screenshots"
+                "screenshots",
             )
         if (!screenshotFolder.exists()) {
             screenshotFolder.mkdirs()

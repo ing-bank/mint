@@ -156,7 +156,7 @@ abstract class AndroidLoop(final override val ctx: AndroidCtx, val sequence: Str
             rules.fold(state) { newState, rule ->
                 newState.apply(rule)
                 newState
-            }
+            },
         )
     }
 
@@ -206,7 +206,7 @@ abstract class AndroidLoop(final override val ctx: AndroidCtx, val sequence: Str
                 it.setAttribute(
                     AndroidConstants.ERROR_MESSAGE,
                     "Invalid SUT: No actionable items found. " +
-                        "Please check if screen has valid widgets that MINT can interact with."
+                        "Please check if screen has valid widgets that MINT can interact with.",
                 )
             }
             return Either.Left(applyAction)
@@ -220,7 +220,7 @@ abstract class AndroidLoop(final override val ctx: AndroidCtx, val sequence: Str
                 Log.e(
                     TAG,
                     "Current state unexpectedly contains multiple selected actions:\n" +
-                        AndroidStateUtils.renderXML(applyAction.node)
+                        AndroidStateUtils.renderXML(applyAction.node),
                 )
                 "Multiple actions were selected in the same step, though only one is expected"
             }

@@ -9,6 +9,6 @@ class EditableContentDescCheckOracle : AccessibilityOracle() {
     override val description = "Check to ensure that an editable TextView is not labeled " +
         "by a contentDescription."
     override val categories = setOf(
-        OracleCategory.A11Y
+        OracleCategory.A11Y,
     )
 }

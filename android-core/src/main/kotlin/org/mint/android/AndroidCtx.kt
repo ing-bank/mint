@@ -27,5 +27,5 @@ data class AndroidCtxImpl(
     override val metadata: (Document, TestMetadata) -> Node,
     override val rules: Set<Rule<AndroidState>>,
     override val oracles: Set<Oracle<AndroidState>>,
-    override val applicationMonitors: Set<ApplicationMonitor<*>>
+    override val applicationMonitors: Set<ApplicationMonitor<*>>,
 ) : AndroidCtx
