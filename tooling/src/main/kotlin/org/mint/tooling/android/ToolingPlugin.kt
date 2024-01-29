@@ -1,4 +1,4 @@
-package org.mint.tooling.android
+package com.ing.mint.tooling.android
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

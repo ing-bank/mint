@@ -1,7 +1,7 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
-import org.mint.android.Action
-import org.mint.android.AndroidState
+import com.ing.mint.android.Action
+import com.ing.mint.android.AndroidState
 import java.math.BigDecimal
 
 data class ItemWithTagClickRule(

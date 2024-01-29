@@ -1,8 +1,8 @@
-package org.mint.android.rule.input.datetime
+package com.ing.mint.android.rule.input.datetime
 
-import org.mint.android.Action
-import org.mint.android.AndroidState
-import org.mint.android.rule.input.BaseInputRule
+import com.ing.mint.android.Action
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.rule.input.BaseInputRule
 import java.math.BigDecimal
 
 data class PickerInputRule(

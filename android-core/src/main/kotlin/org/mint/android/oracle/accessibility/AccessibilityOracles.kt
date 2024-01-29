@@ -1,4 +1,4 @@
-package org.mint.android.oracle.accessibility
+package com.ing.mint.android.oracle.accessibility
 
 object AccessibilityOracles {
     val all = setOf(

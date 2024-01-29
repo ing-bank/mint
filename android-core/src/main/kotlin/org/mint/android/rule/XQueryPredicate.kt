@@ -1,8 +1,8 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.AndroidStateUtils
 import net.sf.saxon.value.BooleanValue
-import org.mint.android.AndroidState
-import org.mint.android.AndroidStateUtils
 
 data class XQueryPredicate(val xquery: String) : (AndroidState) -> Boolean {
     private val eval = AndroidStateUtils.xqueryCompiler().compile(xquery).load()

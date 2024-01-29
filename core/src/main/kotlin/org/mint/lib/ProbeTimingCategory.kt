@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 /**
  * Indicates the timing of the probe invocation

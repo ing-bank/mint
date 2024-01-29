@@ -1,3 +1,3 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 interface ProbeCategory

@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 enum class Verdict {
     /**

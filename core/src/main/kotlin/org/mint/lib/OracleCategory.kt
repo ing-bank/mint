@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 /* A number of oracle categories. If you think something is missing, feel free to contribute */
 enum class OracleCategory(val description: String) {

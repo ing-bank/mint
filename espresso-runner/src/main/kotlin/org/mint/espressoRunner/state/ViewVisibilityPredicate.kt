@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.state
+package com.ing.mint.espressoRunner.state
 
 import android.view.View
 import androidx.test.espresso.matcher.ViewMatchers

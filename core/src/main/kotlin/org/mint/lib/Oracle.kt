@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 /** core Oracle. They are composable and consists of queries on the SUTState to search for problematic versions.  */
 interface Oracle<S : SUTState<S>> {

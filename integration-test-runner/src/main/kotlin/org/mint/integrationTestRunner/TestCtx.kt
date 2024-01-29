@@ -1,14 +1,14 @@
-package org.mint.integrationTestRunner
+package com.ing.mint.integrationTestRunner
 
-import org.mint.StateRepository
-import org.mint.android.AndroidCtx
-import org.mint.android.AndroidState
-import org.mint.android.ApplicationMonitor
-import org.mint.android.TestMetadata
-import org.mint.android.rule.XQueryPredicate
-import org.mint.lib.Oracle
-import org.mint.lib.Rule
-import org.mint.util.MapUtil.getOrDefaultExt
+import com.ing.mint.StateRepository
+import com.ing.mint.android.AndroidCtx
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.ApplicationMonitor
+import com.ing.mint.android.TestMetadata
+import com.ing.mint.android.rule.XQueryPredicate
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.Rule
+import com.ing.mint.util.MapUtil.getOrDefaultExt
 import org.w3c.dom.Document
 import org.w3c.dom.Node
 

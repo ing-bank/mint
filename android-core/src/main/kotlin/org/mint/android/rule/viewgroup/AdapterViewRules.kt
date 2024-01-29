@@ -1,10 +1,10 @@
-package org.mint.android.rule.viewgroup
+package com.ing.mint.android.rule.viewgroup
 
-import org.mint.android.Action
-import org.mint.android.AndroidState
-import org.mint.android.rule.BasicRules.xpred
-import org.mint.android.rule.MultiplicativeRule
-import org.mint.android.rule.PositionBasedRule
+import com.ing.mint.android.Action
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.rule.BasicRules.xpred
+import com.ing.mint.android.rule.MultiplicativeRule
+import com.ing.mint.android.rule.PositionBasedRule
 import org.w3c.dom.Element
 import java.math.BigDecimal
 import java.util.Random

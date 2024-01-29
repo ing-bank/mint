@@ -1,4 +1,4 @@
-package org.mint
+package com.ing.mint
 
 /**
  * The

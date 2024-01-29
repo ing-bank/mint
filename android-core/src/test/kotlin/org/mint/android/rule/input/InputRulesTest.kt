@@ -1,13 +1,13 @@
-package org.mint.android.rule.input
+package com.ing.mint.android.rule.input
 
+import com.ing.mint.android.StateTest
+import com.ing.mint.android.xml.attribute
 import junit.framework.TestCase.assertFalse
 import junitparams.JUnitParamsRunner
 import junitparams.Parameters
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mint.android.StateTest
-import org.mint.android.xml.attribute
 
 @RunWith(JUnitParamsRunner::class)
 class InputRulesTest : StateTest() {
@@ -16,20 +16,20 @@ class InputRulesTest : StateTest() {
               <View class="android.view.ViewStub" id="16908719" resourceName="action_mode_bar_stub" package="android"/>
               <View class="androidx.appcompat.widget.ContentFrameLayout" id="16908290" resourceName="content" package="android">
                 <View class="android.widget.LinearLayout">
-                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="org.mint.exampleapp"/>
-                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="33" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="4098" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="1" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="2" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="3" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="8194" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="97" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="17" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="36" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="20" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="113" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="131073" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
+                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="com.ing.mint.exampleapp"/>
+                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="33" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="4098" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="1" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="2" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="3" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="8194" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="97" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="17" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="36" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="20" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="113" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" inputType="131073" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
                 </View>
               </View>
              </View>
@@ -57,8 +57,8 @@ class InputRulesTest : StateTest() {
               <View class="android.view.ViewStub" id="16908719" resourceName="action_mode_bar_stub" package="android"/>
               <View class="androidx.appcompat.widget.ContentFrameLayout" id="16908290" resourceName="content" package="android">
                 <View class="android.widget.LinearLayout">
-                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
+                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" isEditText="true" isDisplayed="true" hasOnClickListeners="false" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
                 </View>
               </View>
         </View>

@@ -1,6 +1,6 @@
-package org.mint.android.query
+package com.ing.mint.android.query
 
-import org.mint.android.AndroidState
-import org.mint.lib.Query
+import com.ing.mint.android.AndroidState
+import com.ing.mint.lib.Query
 
 object AnyQuery : Query<AndroidState>

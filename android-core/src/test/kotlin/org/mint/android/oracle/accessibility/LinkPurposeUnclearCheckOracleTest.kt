@@ -1,10 +1,10 @@
-package org.mint.android.oracle.accessibility
+package com.ing.mint.android.oracle.accessibility
 
+import com.ing.mint.android.StateBuilder
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.lib.Verdict.WARNING
 import org.junit.Assert
 import org.junit.Test
-import org.mint.android.StateBuilder
-import org.mint.android.xml.attribute
-import org.mint.lib.Verdict.WARNING
 
 class LinkPurposeUnclearCheckOracleTest : StateBuilder {
 

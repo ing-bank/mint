@@ -1,4 +1,4 @@
-package org.mint.android
+package com.ing.mint.android
 
 /**
  * Observer of a specific aspect of the SUT, being informed of changes regarding it.

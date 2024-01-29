@@ -1,19 +1,19 @@
-package org.mint.api
+package com.ing.mint.api
 
+import com.ing.mint.MINT
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.AndroidStateUtils
+import com.ing.mint.android.InMemoryRepository
+import com.ing.mint.android.StateBuilder
+import com.ing.mint.android.rule.BasicRules
+import com.ing.mint.android.rule.XQueryPredicate
+import com.ing.mint.integrationTestRunner.ITTestLoop
 import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mint.MINT
-import org.mint.android.AndroidState
-import org.mint.android.AndroidStateUtils
-import org.mint.android.InMemoryRepository
-import org.mint.android.StateBuilder
-import org.mint.android.rule.BasicRules
-import org.mint.android.rule.XQueryPredicate
-import org.mint.integrationTestRunner.ITTestLoop
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)

@@ -1,11 +1,11 @@
-package org.mint.integrationTestRunner
+package com.ing.mint.integrationTestRunner
 
-import org.mint.android.AndroidCtx
-import org.mint.android.AndroidLoop
-import org.mint.android.AndroidState
-import org.mint.android.TestMetadata
-import org.mint.util.Either
-import org.mint.util.MapUtil.getOrDefaultExt
+import com.ing.mint.android.AndroidCtx
+import com.ing.mint.android.AndroidLoop
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.TestMetadata
+import com.ing.mint.util.Either
+import com.ing.mint.util.MapUtil.getOrDefaultExt
 import org.w3c.dom.Element
 
 open class ITTestLoop(

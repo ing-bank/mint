@@ -1,7 +1,7 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
-import org.mint.android.AndroidConstants
-import org.mint.android.AndroidState
+import com.ing.mint.android.AndroidConstants
+import com.ing.mint.android.AndroidState
 import org.w3c.dom.Element
 
 abstract class BasePositionBasedClickRule : BaseRule() {

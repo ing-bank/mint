@@ -1,6 +1,10 @@
-package org.mint.android.probe
+package com.ing.mint.android.probe
 
 import android.util.Log
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.lib.ProbeCategory
+import com.ing.mint.lib.ProbeTimingCategory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -16,10 +20,6 @@ import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Semaphore
-import org.mint.android.AndroidState
-import org.mint.android.xml.attribute
-import org.mint.lib.ProbeCategory
-import org.mint.lib.ProbeTimingCategory
 import java.io.InputStream
 
 // Note: not too happy with the state management here yet but at least it works

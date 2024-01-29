@@ -1,5 +1,5 @@
-package org.mint.espressoRunner.state
-import org.mint.android.AndroidLoop
+package com.ing.mint.espressoRunner.state
+import com.ing.mint.android.AndroidLoop
 import org.w3c.dom.Node
 import java.text.SimpleDateFormat
 import java.util.*

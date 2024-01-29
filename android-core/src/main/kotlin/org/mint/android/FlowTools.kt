@@ -1,4 +1,4 @@
-package org.mint.android
+package com.ing.mint.android
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

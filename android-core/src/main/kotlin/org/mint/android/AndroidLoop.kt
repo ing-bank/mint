@@ -1,19 +1,19 @@
-package org.mint.android
+package com.ing.mint.android
 
 import android.util.Log
-import org.mint.MintLoop
-import org.mint.android.xml.ThrowableAttributes
-import org.mint.android.xml.attribute
-import org.mint.android.xml.hasAttribute
-import org.mint.android.xml.hasNS
-import org.mint.android.xml.notCorrelated
-import org.mint.lib.Oracle
-import org.mint.lib.Probe
-import org.mint.lib.ProbeTimingCategory
-import org.mint.lib.Rule
-import org.mint.util.Either
-import org.mint.util.flatMap
-import org.mint.util.redeemWith
+import com.ing.mint.MintLoop
+import com.ing.mint.android.xml.ThrowableAttributes
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.android.xml.hasAttribute
+import com.ing.mint.android.xml.hasNS
+import com.ing.mint.android.xml.notCorrelated
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.Probe
+import com.ing.mint.lib.ProbeTimingCategory
+import com.ing.mint.lib.Rule
+import com.ing.mint.util.Either
+import com.ing.mint.util.flatMap
+import com.ing.mint.util.redeemWith
 import org.w3c.dom.Element
 import java.util.UUID
 

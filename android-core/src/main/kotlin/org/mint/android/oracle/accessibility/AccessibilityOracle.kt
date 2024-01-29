@@ -1,15 +1,15 @@
-package org.mint.android.oracle.accessibility
+package com.ing.mint.android.oracle.accessibility
 
+import com.ing.mint.android.AndroidConstants
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.xml.appendChild
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.android.xml.hasAttribute
+import com.ing.mint.android.xml.parent
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.Probe
+import com.ing.mint.lib.Verdict
 import kotlinx.coroutines.runBlocking
-import org.mint.android.AndroidConstants
-import org.mint.android.AndroidState
-import org.mint.android.xml.appendChild
-import org.mint.android.xml.attribute
-import org.mint.android.xml.hasAttribute
-import org.mint.android.xml.parent
-import org.mint.lib.Oracle
-import org.mint.lib.Probe
-import org.mint.lib.Verdict
 import org.w3c.dom.Node
 
 /**

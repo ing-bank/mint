@@ -1,18 +1,18 @@
-package org.mint.android.oracle
+package com.ing.mint.android.oracle
 
+import com.ing.mint.android.AndroidConstants
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.FlowTools.toListFlow
+import com.ing.mint.android.probe.LogCatProbe
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.OracleCategory
+import com.ing.mint.lib.Probe
+import com.ing.mint.lib.Verdict
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.filterNot
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onEmpty
 import kotlinx.coroutines.runBlocking
-import org.mint.android.AndroidConstants
-import org.mint.android.AndroidState
-import org.mint.android.FlowTools.toListFlow
-import org.mint.android.probe.LogCatProbe
-import org.mint.lib.Oracle
-import org.mint.lib.OracleCategory
-import org.mint.lib.Probe
-import org.mint.lib.Verdict
 
 class AndroidLogOracle : Oracle<AndroidState> {
     companion object AndroidLogOracle {

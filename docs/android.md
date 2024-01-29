@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     def mint_version = 'x.y.z-hash'
-    androidTestImplementation "org.mint:android:${mint_version}"
+    androidTestImplementation "com.ing.mint:android:${mint_version}"
 }
 ```
 
@@ -37,7 +37,7 @@ Configuration for the MINT plugin in the top-level build.gradle:
 buildscript {
     dependencies {
         def mint_plugin_version = 'x.y.z-hash'
-        classpath "org.mint.tooling:mint-gradle-plugin:${mint_plugin_version}"
+        classpath "com.ing.mint.tooling:mint-gradle-plugin:${mint_plugin_version}"
     }
 }
 ```
@@ -82,14 +82,14 @@ android {
 
 ### Creating your first test
 ```kotlin
-package org.mint.exampleapp
+package com.ing.mint.exampleapp
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mint.MINTRule
+import com.ing.mint.MINTRule
 
 @RunWith(AndroidJUnit4::class)
 class ExampleMintTest  {

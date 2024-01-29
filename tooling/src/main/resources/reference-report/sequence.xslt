@@ -428,7 +428,7 @@
                             count.innerHTML = elems.snapshotLength;
 
                             for (var i = 0; i < elems.snapshotLength; i++) {
-                                var r = doc.createElementNS("http://org.mint/report", "match");
+                                var r = doc.createElementNS("http://com.ing.mint/report", "match");
                                 elems.snapshotItem(i).appendChild(r);
                             }
                         }

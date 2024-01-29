@@ -1,6 +1,6 @@
-package org.mint.android.xml
+package com.ing.mint.android.xml
 
-import org.mint.android.AndroidConstants
+import com.ing.mint.android.AndroidConstants
 import org.w3c.dom.Node
 
 /**

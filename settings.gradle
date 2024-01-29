@@ -13,7 +13,7 @@ dependencyResolutionManagement {
         mavenLocal()
     }
 }
-rootProject.name = "org.mint.android"
+rootProject.name = "com.ing.mint.android"
 include ':core'
 include ':android-core'
 include ':espresso-runner'

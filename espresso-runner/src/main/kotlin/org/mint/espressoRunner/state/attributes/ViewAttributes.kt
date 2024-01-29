@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.state.attributes
+package com.ing.mint.espressoRunner.state.attributes
 
 import android.annotation.SuppressLint
 import android.content.res.Resources
@@ -24,7 +24,7 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.platform.app.InstrumentationRegistry
-import org.mint.espressoRunner.state.EspressoViewVisibilityPredicate
+import com.ing.mint.espressoRunner.state.EspressoViewVisibilityPredicate
 import org.w3c.dom.Element
 
 /** Apply all View attributes we are interested in to the given element.

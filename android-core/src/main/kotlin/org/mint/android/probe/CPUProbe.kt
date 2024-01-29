@@ -1,7 +1,10 @@
-package org.mint.android.probe
+package com.ing.mint.android.probe
 
 import android.util.Log
 import androidx.test.platform.app.InstrumentationRegistry
+import com.ing.mint.android.AndroidState
+import com.ing.mint.lib.ProbeCategory
+import com.ing.mint.lib.ProbeTimingCategory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -13,9 +16,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Semaphore
-import org.mint.android.AndroidState
-import org.mint.lib.ProbeCategory
-import org.mint.lib.ProbeTimingCategory
 import java.io.FileInputStream
 import java.io.InputStream
 

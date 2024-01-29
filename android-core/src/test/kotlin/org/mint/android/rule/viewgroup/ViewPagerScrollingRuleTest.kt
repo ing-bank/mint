@@ -1,8 +1,8 @@
-package org.mint.android.rule.viewgroup
+package com.ing.mint.android.rule.viewgroup
 
+import com.ing.mint.android.StateTest
 import org.junit.Assert
 import org.junit.Test
-import org.mint.android.StateTest
 
 class ViewPagerScrollingRuleTest : StateTest() {
     override val widgetTreeXML: String = """

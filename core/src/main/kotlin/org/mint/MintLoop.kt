@@ -1,11 +1,11 @@
-package org.mint
+package com.ing.mint
 
-import org.mint.lib.Oracle
-import org.mint.lib.Probe
-import org.mint.lib.Rule
-import org.mint.lib.RunContext
-import org.mint.lib.SUTState
-import org.mint.util.Either
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.Probe
+import com.ing.mint.lib.Rule
+import com.ing.mint.lib.RunContext
+import com.ing.mint.lib.SUTState
+import com.ing.mint.util.Either
 
 /** All stages of the mint loop
  *

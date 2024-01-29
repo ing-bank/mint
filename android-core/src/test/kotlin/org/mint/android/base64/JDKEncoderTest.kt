@@ -1,4 +1,4 @@
-package org.mint.android.base64
+package com.ing.mint.android.base64
 
 import org.junit.Assert
 import org.junit.Test

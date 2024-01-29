@@ -1,4 +1,4 @@
-package org.mint
+package com.ing.mint
 
 import org.junit.Assert.fail
 import org.junit.rules.ExternalResource
@@ -12,7 +12,7 @@ import org.junit.runners.model.Statement
  * The rule makes sure that we encapsulate a [RepeatableTestStatement] that ensures the # sequences
  * for MINT are properly executed. It also ensures the lifetime of the MINT components are properly managed.
  */
-class MINTRule(private val mint: MINT? = org.mint.MINT.Default) : MINTApi, ExternalResource() {
+class MINTRule(private val mint: MINT? = com.ing.mint.MINT.Default) : MINTApi, ExternalResource() {
     private val metadataRule = TestMetadataRule()
 
     override fun apply(stmt: Statement, description: Description): Statement {

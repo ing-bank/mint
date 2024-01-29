@@ -10,9 +10,9 @@
     version="1.0"
     xmlns:h="http://www.w3.org/1999/xhtml"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:action="http://org.mint/espresso/action"
-    xmlns:rule="http://org.mint/espresso/rule"
-    xmlns:report="http://org.mint/report"
+    xmlns:action="http://com.ing.mint/espresso/action"
+    xmlns:rule="http://com.ing.mint/espresso/rule"
+    xmlns:report="http://com.ing.mint/report"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <!-- index AndroidLoop elements by their session id -->

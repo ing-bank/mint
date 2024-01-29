@@ -1,12 +1,12 @@
-package org.mint.android.probe
+package com.ing.mint.android.probe
 
 import android.util.Log
-import org.mint.android.AndroidState
-import org.mint.android.ApplicationMonitor
-import org.mint.android.Observer
-import org.mint.android.xml.ThrowableAttributes
-import org.mint.lib.ProbeCategory
-import org.mint.lib.ProbeTimingCategory
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.ApplicationMonitor
+import com.ing.mint.android.Observer
+import com.ing.mint.android.xml.ThrowableAttributes
+import com.ing.mint.lib.ProbeCategory
+import com.ing.mint.lib.ProbeTimingCategory
 
 /**
  * Probe that detects application crashes by attaching itself to the relevant [ApplicationMonitor] to be

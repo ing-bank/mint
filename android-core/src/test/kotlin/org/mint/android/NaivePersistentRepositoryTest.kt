@@ -1,11 +1,11 @@
-package org.mint.android
+package com.ing.mint.android
 
+import com.ing.mint.android.rule.BasicRules
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
-import org.mint.android.rule.BasicRules
 import java.io.File
 import java.nio.file.Files
 
@@ -15,9 +15,9 @@ class NaivePersistentRepositoryTest : StateBuilder {
               <View class="android.view.ViewStub" id="16908719" resourceName="action_mode_bar_stub" package="android"/>
               <View class="androidx.appcompat.widget.ContentFrameLayout" id="16908290" resourceName="content" package="android">
                 <View class="android.widget.LinearLayout">
-                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="org.mint.exampleapp" isClickable="true" isDisplayed="true"/>
-                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
+                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="com.ing.mint.exampleapp" isClickable="true" isDisplayed="true"/>
+                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
                 </View>
               </View>
             </View>

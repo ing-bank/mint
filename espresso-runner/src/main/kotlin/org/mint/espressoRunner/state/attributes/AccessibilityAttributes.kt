@@ -1,10 +1,10 @@
-package org.mint.espressoRunner.state.attributes
+package com.ing.mint.espressoRunner.state.attributes
 
 import android.os.Build
 import android.view.View
 import android.widget.TextView
-import org.mint.android.xml.appendChild
-import org.mint.espressoRunner.view.shouldFocusView
+import com.ing.mint.android.xml.appendChild
+import com.ing.mint.espressoRunner.view.shouldFocusView
 import org.w3c.dom.Element
 
 internal object AccessibilityAttributes {

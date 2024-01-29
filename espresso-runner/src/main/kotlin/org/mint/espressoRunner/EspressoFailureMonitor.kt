@@ -1,4 +1,4 @@
-package org.mint.espressoRunner
+package com.ing.mint.espressoRunner
 
 import android.view.View
 import androidx.test.espresso.Espresso
@@ -6,9 +6,9 @@ import androidx.test.espresso.FailureHandler
 import androidx.test.espresso.PerformException
 import androidx.test.espresso.base.DefaultFailureHandler
 import androidx.test.platform.app.InstrumentationRegistry
+import com.ing.mint.android.ApplicationMonitor
+import com.ing.mint.android.Observer
 import org.hamcrest.Matcher
-import org.mint.android.ApplicationMonitor
-import org.mint.android.Observer
 
 /**
  * Intercepts exceptions thrown by espresso during the test execution to notify the loop-specific observer of them, if configured,

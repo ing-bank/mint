@@ -1,16 +1,16 @@
-package org.mint.android.oracle
+package com.ing.mint.android.oracle
 
+import com.ing.mint.android.StateBuilder
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.lib.Verdict
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.mint.android.StateBuilder
-import org.mint.android.xml.attribute
-import org.mint.lib.Verdict
 
 class AndroidLogOracleTest : StateBuilder {
     @Test
     fun testVerdictCreationWithAnError() {
         val xml = """<View>
-             <LogCatProbe xmlns="https://org.mint/espresso/probe">
+             <LogCatProbe xmlns="https://com.ing.mint/espresso/probe">
                <error level="I" source="Choreographer" message="Skipped 94 frames!  The application may be doing too much work on its main thread." logline="07-26 14:42:05.150  8109  8109 I Choreographer: Skipped 94 frames!  The application may be doing too much work on its main thread."/>
                <error level="W" source="System.err" message="java.lang.NumberFormatException: For input string: &quot;6.0&quot;" logline="07-22 16:39:19.042   988  7145 W System.err: java.lang.NumberFormatException: For input string: &quot;6.0&quot;"/>
              </LogCatProbe>
@@ -25,7 +25,7 @@ class AndroidLogOracleTest : StateBuilder {
     @Test
     fun testVerdictCreation() {
         val xml = """<View>
-             <LogCatProbe xmlns="https://org.mint/espresso/probe"/>
+             <LogCatProbe xmlns="https://com.ing.mint/espresso/probe"/>
            </View>
         """.trimIndent()
         val oracle = AndroidLogOracle()

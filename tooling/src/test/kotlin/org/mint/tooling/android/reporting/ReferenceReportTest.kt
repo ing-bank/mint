@@ -1,4 +1,4 @@
-package org.mint.tooling.android.reporting
+package com.ing.mint.tooling.android.reporting
 
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.After

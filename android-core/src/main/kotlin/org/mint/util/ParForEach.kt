@@ -1,4 +1,4 @@
-package org.mint.util
+package com.ing.mint.util
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

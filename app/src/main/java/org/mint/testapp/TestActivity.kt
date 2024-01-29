@@ -1,4 +1,4 @@
-package org.mint.testapp
+package com.ing.mint.testapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

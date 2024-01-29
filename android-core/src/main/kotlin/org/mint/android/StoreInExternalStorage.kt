@@ -1,9 +1,9 @@
-package org.mint.android
+package com.ing.mint.android
 
 import android.os.Environment
 import androidx.test.platform.app.InstrumentationRegistry
-import org.mint.StateRepository
-import org.mint.android.query.AnyQuery
+import com.ing.mint.StateRepository
+import com.ing.mint.android.query.AnyQuery
 import java.io.File
 import java.util.*
 

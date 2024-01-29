@@ -1,4 +1,4 @@
-package org.mint.android.probe
+package com.ing.mint.android.probe
 
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking

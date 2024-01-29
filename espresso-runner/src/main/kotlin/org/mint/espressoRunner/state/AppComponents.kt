@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.state
+package com.ing.mint.espressoRunner.state
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.test.platform.app.InstrumentationRegistry

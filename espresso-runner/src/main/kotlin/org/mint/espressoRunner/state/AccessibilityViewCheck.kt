@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.state
+package com.ing.mint.espressoRunner.state
 
 import android.view.View
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckPreset
@@ -10,7 +10,7 @@ import com.google.android.apps.common.testing.accessibility.framework.Accessibil
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityViewCheckResult
 import com.google.android.apps.common.testing.accessibility.framework.Parameters
 import com.google.android.apps.common.testing.accessibility.framework.ResultMetadata
-import org.mint.android.xml.appendChild
+import com.ing.mint.android.xml.appendChild
 import org.w3c.dom.Element
 import org.w3c.dom.Node
 import java.util.*

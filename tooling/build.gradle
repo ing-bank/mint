@@ -48,7 +48,7 @@ jar {
 publishing {
     publications {
         plugin(MavenPublication) {
-            groupId = 'org.mint.tooling'
+            groupId = 'com.ing.mint.tooling'
             artifactId 'mint-gradle-plugin'
             version mintVersion
             artifacts = [ jar ]

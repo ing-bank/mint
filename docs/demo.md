@@ -2,14 +2,14 @@
 
 ## Configuring a simple test
 ```kotlin
-package org.mint.exampleapp
+package com.ing.mint.exampleapp
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mint.MINTRule
+import com.ing.mint.MINTRule
 
 @RunWith(AndroidJUnit4::class)
 class ExampleMintTest  {

@@ -1,15 +1,15 @@
-package org.mint.tooling.android
+package com.ing.mint.tooling.android
 
+import com.ing.mint.android.AndroidStateUtils
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.android.xml.children
+import com.ing.mint.android.xml.parent
+import com.ing.mint.android.xml.query
+import com.ing.mint.tooling.android.reporting.VerdictUtil.countVerdicts
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.TaskAction
-import org.mint.android.AndroidStateUtils
-import org.mint.android.xml.attribute
-import org.mint.android.xml.children
-import org.mint.android.xml.parent
-import org.mint.android.xml.query
-import org.mint.tooling.android.reporting.VerdictUtil.countVerdicts
 import java.io.FileOutputStream
 import java.io.OutputStreamWriter
 

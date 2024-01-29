@@ -1,13 +1,13 @@
-package org.mint.android.rule.input
+package com.ing.mint.android.rule.input
 
+import com.ing.mint.android.AndroidConstants
+import com.ing.mint.android.StateTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.mint.android.AndroidConstants
-import org.mint.android.StateTest
 
 class AbstractRegexGenerationRuleTest : StateTest() {
     override val widgetTreeXML: String = """
-        <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
+        <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
     """.trimIndent()
 
     @Test

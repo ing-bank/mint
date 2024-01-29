@@ -1,9 +1,9 @@
-package org.mint.api
+package com.ing.mint.api
 
-import org.mint.android.AndroidState
-import org.mint.lib.Oracle
-import org.mint.lib.OracleCategory
-import org.mint.lib.Probe
+import com.ing.mint.android.AndroidState
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.OracleCategory
+import com.ing.mint.lib.Probe
 
 class NoopOracle : Oracle<AndroidState> {
     companion object {

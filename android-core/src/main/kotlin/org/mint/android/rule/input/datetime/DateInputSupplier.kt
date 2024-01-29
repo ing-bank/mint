@@ -1,4 +1,4 @@
-package org.mint.android.rule.input.datetime
+package com.ing.mint.android.rule.input.datetime
 
 import android.annotation.SuppressLint
 import java.text.DateFormat

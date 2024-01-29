@@ -1,4 +1,4 @@
-package org.mint.tooling.android
+package com.ing.mint.tooling.android
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input

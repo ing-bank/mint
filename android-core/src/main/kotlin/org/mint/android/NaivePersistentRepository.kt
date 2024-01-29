@@ -1,7 +1,7 @@
-package org.mint.android
+package com.ing.mint.android
 
-import org.mint.StateRepository
-import org.mint.lib.Query
+import com.ing.mint.StateRepository
+import com.ing.mint.lib.Query
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.File

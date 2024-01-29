@@ -1,7 +1,7 @@
-package org.mint
+package com.ing.mint
 
-import org.mint.lib.Query
-import org.mint.lib.SUTState
+import com.ing.mint.lib.Query
+import com.ing.mint.lib.SUTState
 
 interface StateRepository<S : SUTState<S>> {
     /** Ask how the current state relates to other persisted data, such as history etc */
