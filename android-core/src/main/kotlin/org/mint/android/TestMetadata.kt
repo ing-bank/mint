@@ -1,4 +1,4 @@
-package org.mint.android
+package com.ing.mint.android
 
 class TestMetadata(
     var className: String,

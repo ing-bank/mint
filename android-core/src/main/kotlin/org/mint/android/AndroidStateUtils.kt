@@ -1,13 +1,13 @@
-package org.mint.android
+package com.ing.mint.android
 
+import com.ing.mint.android.base64.Decoder
+import com.ing.mint.android.base64.Encoder
 import net.sf.saxon.s9api.DOMDestination
 import net.sf.saxon.s9api.DocumentBuilder
 import net.sf.saxon.s9api.Processor
 import net.sf.saxon.s9api.XQueryCompiler
 import net.sf.saxon.s9api.XdmNode
 import org.apache.xerces.parsers.DOMParser
-import org.mint.android.base64.Decoder
-import org.mint.android.base64.Encoder
 import org.w3c.dom.Document
 import org.w3c.dom.Node
 import java.io.File

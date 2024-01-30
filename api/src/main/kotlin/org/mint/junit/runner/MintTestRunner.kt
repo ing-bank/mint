@@ -1,4 +1,4 @@
-package org.mint.junit.runner
+package com.ing.mint.junit.runner
 
 import org.junit.runners.BlockJUnit4ClassRunner
 import org.junit.runners.model.FrameworkMethod

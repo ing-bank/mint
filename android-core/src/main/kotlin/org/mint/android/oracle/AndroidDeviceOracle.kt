@@ -1,11 +1,11 @@
-package org.mint.android.oracle
+package com.ing.mint.android.oracle
 
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.probe.CPUProbe
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.OracleCategory
+import com.ing.mint.lib.Probe
 import kotlinx.coroutines.runBlocking
-import org.mint.android.AndroidState
-import org.mint.android.probe.CPUProbe
-import org.mint.lib.Oracle
-import org.mint.lib.OracleCategory
-import org.mint.lib.Probe
 
 class AndroidDeviceOracle : Oracle<AndroidState> {
 

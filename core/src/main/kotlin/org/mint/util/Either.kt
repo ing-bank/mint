@@ -1,4 +1,4 @@
-package org.mint.util
+package com.ing.mint.util
 
 // trick from Arrow, declare as extension function to prevent issues with in/out types
 inline fun <A, B, C> Either<A, B>.flatMap(f: (B) -> Either<A, C>): Either<A, C> =

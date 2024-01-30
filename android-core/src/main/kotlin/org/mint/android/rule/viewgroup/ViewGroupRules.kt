@@ -1,11 +1,11 @@
-package org.mint.android.rule.viewgroup
+package com.ing.mint.android.rule.viewgroup
 
-import org.mint.android.Action
-import org.mint.android.rule.BasicRules
-import org.mint.android.rule.BasicRules.defaultPrio
-import org.mint.android.rule.BasicRules.xpred
-import org.mint.android.rule.GenericRule
-import org.mint.android.rule.MultiplicativeRule
+import com.ing.mint.android.Action
+import com.ing.mint.android.rule.BasicRules
+import com.ing.mint.android.rule.BasicRules.defaultPrio
+import com.ing.mint.android.rule.BasicRules.xpred
+import com.ing.mint.android.rule.GenericRule
+import com.ing.mint.android.rule.MultiplicativeRule
 import java.math.BigDecimal
 
 object ViewGroupRules {

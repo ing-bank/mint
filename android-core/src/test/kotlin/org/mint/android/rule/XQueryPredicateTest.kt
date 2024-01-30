@@ -1,17 +1,17 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
+import com.ing.mint.android.StateTest
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.mint.android.StateTest
 
 class XQueryPredicateTest : StateTest() {
     override val widgetTreeXML: String = """
         <View>
-          <HelloWorldProbe xmlns:prb="https://org.mint/espresso/probe">
+          <HelloWorldProbe xmlns:prb="https://com.ing.mint/espresso/probe">
             <hello-world full-name="John Doe"/>
           </HelloWorldProbe>
-          <HelloWorldProbe xmlns="https://org.mint/espresso/probe">
+          <HelloWorldProbe xmlns="https://com.ing.mint/espresso/probe">
             <hello-world full-name="Jane Doe"/>
           </HelloWorldProbe>
           <HelloWorldProbe>
@@ -39,14 +39,14 @@ class XQueryPredicateTest : StateTest() {
     fun testWithAttributeInANamespace() {
         val s = buildState(
             """
-                     <org.mint.android.rule.GenericRule description="Click on any widget that has 'isClickable' as true">
-                        <click xmlns="http://org.mint/espresso/action"
+                     <com.ing.mint.android.rule.GenericRule description="Click on any widget that has 'isClickable' as true">
+                        <click xmlns="http://com.ing.mint/espresso/action"
                                 applied="true"
                                 derived-priority="1"
                                 priority="1"
                                 resourceName=""
                                 selected="true"/>
-                     </org.mint.android.rule.GenericRule>
+                     </com.ing.mint.android.rule.GenericRule>
             """.trimIndent(),
         )
         assertTrue(XQueryPredicate("count(//action:click[@selected = 'true']) = 1").invoke(s))

@@ -1,13 +1,13 @@
-package org.mint.android
+package com.ing.mint.android
 
-import org.mint.StateRepository
-import org.mint.android.query.AnyQuery
-import org.mint.android.xml.attribute
-import org.mint.android.xml.children
-import org.mint.android.xml.hasNS
-import org.mint.android.xml.notCorrelated
-import org.mint.lib.Query
-import org.mint.util.MapUtil.getOrDefaultExt
+import com.ing.mint.StateRepository
+import com.ing.mint.android.query.AnyQuery
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.android.xml.children
+import com.ing.mint.android.xml.hasNS
+import com.ing.mint.android.xml.notCorrelated
+import com.ing.mint.lib.Query
+import com.ing.mint.util.MapUtil.getOrDefaultExt
 import org.w3c.dom.Node
 
 /*

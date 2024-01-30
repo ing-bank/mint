@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 /**
  * Run Context of a Mint Loop. Is available for the whole duration of the MINT execution

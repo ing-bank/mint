@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 /** A probe that observes an aspect of an application, such as widget tree, memory usage, service calls, ... */
 interface Probe<S : SUTState<S>> {

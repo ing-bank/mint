@@ -1,8 +1,8 @@
-package org.mint.android.probe
+package com.ing.mint.android.probe
 
-import org.mint.android.AndroidConstants
-import org.mint.android.AndroidState
-import org.mint.lib.Probe
+import com.ing.mint.android.AndroidConstants
+import com.ing.mint.android.AndroidState
+import com.ing.mint.lib.Probe
 import org.w3c.dom.Node
 
 interface AndroidProbe : Probe<AndroidState> {

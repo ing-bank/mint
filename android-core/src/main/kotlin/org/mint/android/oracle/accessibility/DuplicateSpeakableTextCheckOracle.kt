@@ -1,6 +1,6 @@
-package org.mint.android.oracle.accessibility
+package com.ing.mint.android.oracle.accessibility
 
-import org.mint.lib.OracleCategory
+import com.ing.mint.lib.OracleCategory
 
 class DuplicateSpeakableTextCheckOracle : AccessibilityOracle() {
     override val checkType = "DuplicateSpeakableTextCheck"

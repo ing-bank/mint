@@ -1,9 +1,9 @@
-package org.mint.espressoRunner.state
+package com.ing.mint.espressoRunner.state
 
 import android.graphics.Bitmap
 import android.util.Log
 import androidx.test.platform.app.InstrumentationRegistry
-import org.mint.android.base64.Encoder
+import com.ing.mint.android.base64.Encoder
 import org.w3c.dom.Document
 import org.w3c.dom.Node
 import java.io.ByteArrayOutputStream

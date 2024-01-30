@@ -1,12 +1,12 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
+import com.ing.mint.android.Action
+import com.ing.mint.android.StateTest
+import com.ing.mint.android.rule.viewgroup.ViewGroupRules
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.android.xml.query
 import org.junit.Assert
 import org.junit.Test
-import org.mint.android.Action
-import org.mint.android.StateTest
-import org.mint.android.rule.viewgroup.ViewGroupRules
-import org.mint.android.xml.attribute
-import org.mint.android.xml.query
 import java.math.BigDecimal
 
 class MultiplicativeRuleTest : StateTest() {
@@ -113,7 +113,7 @@ class MultiplicativeRuleTest : StateTest() {
         rules.forEach { s.apply(it) }
 
         val deprioritizationRules = s.query {
-            it.nodeName == "org.mint.android.rule.MultiplicativeRule"
+            it.nodeName == "com.ing.mint.android.rule.MultiplicativeRule"
         }
         val clickDeprioritizationRules = deprioritizationRules[0].query {
             it.nodeName == "click"

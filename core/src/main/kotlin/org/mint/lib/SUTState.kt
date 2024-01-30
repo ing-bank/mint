@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 /** SUTState is hierarchical */
 interface SUTState<S : SUTState<S>> {

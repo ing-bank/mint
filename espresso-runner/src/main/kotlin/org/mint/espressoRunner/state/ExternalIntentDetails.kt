@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.state
+package com.ing.mint.espressoRunner.state
 
 import android.content.Intent
 import androidx.test.espresso.intent.VerifiableIntent

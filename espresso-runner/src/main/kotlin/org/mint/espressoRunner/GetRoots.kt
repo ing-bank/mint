@@ -1,4 +1,4 @@
-package org.mint.espressoRunner
+package com.ing.mint.espressoRunner
 
 import android.view.View
 import androidx.test.espresso.Espresso

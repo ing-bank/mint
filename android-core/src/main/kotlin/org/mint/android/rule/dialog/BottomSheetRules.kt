@@ -1,10 +1,10 @@
-package org.mint.android.rule.dialog
+package com.ing.mint.android.rule.dialog
 
-import org.mint.android.Action
-import org.mint.android.AndroidState
-import org.mint.android.rule.BasicRules
-import org.mint.android.rule.BasicRules.xpred
-import org.mint.android.rule.PositionBasedRule
+import com.ing.mint.android.Action
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.rule.BasicRules
+import com.ing.mint.android.rule.BasicRules.xpred
+import com.ing.mint.android.rule.PositionBasedRule
 import org.w3c.dom.Element
 
 object BottomSheetRules {

@@ -1,9 +1,9 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
-import org.mint.android.Action
-import org.mint.android.AndroidConstants
-import org.mint.android.AndroidState
-import org.mint.lib.Rule
+import com.ing.mint.android.Action
+import com.ing.mint.android.AndroidConstants
+import com.ing.mint.android.AndroidState
+import com.ing.mint.lib.Rule
 import org.w3c.dom.Element
 import java.math.BigDecimal
 

@@ -1,8 +1,8 @@
-package org.mint.espressoRunner.actions
+package com.ing.mint.espressoRunner.actions
 
 import androidx.test.platform.app.InstrumentationRegistry
-import org.mint.espressoRunner.actions.DeviceThemeChange.Theme.DARK
-import org.mint.espressoRunner.actions.DeviceThemeChange.Theme.LIGHT
+import com.ing.mint.espressoRunner.actions.DeviceThemeChange.Theme.DARK
+import com.ing.mint.espressoRunner.actions.DeviceThemeChange.Theme.LIGHT
 
 object DeviceThemeChange {
     private const val CMD_UI_MODE_NIGHT_YES =

@@ -1,6 +1,6 @@
-package org.mint.tooling.android.reporting
+package com.ing.mint.tooling.android.reporting
 
-import org.mint.android.xml.attribute
+import com.ing.mint.android.xml.attribute
 import org.w3c.dom.Element
 import org.w3c.dom.Node
 

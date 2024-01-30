@@ -1,13 +1,13 @@
-package org.mint.android.rule.input
+package com.ing.mint.android.rule.input
 
 import android.text.InputType
 import com.github.javafaker.Faker
-import org.mint.android.Action
-import org.mint.android.AndroidState
-import org.mint.android.rule.BasicRules
-import org.mint.android.rule.MultiplicativeRule
-import org.mint.android.rule.input.datetime.DateInputSupplier
-import org.mint.android.rule.input.datetime.TimeInputSupplier
+import com.ing.mint.android.Action
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.rule.BasicRules
+import com.ing.mint.android.rule.MultiplicativeRule
+import com.ing.mint.android.rule.input.datetime.DateInputSupplier
+import com.ing.mint.android.rule.input.datetime.TimeInputSupplier
 import org.w3c.dom.Element
 import java.math.BigDecimal
 import java.util.Locale

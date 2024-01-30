@@ -1,11 +1,11 @@
-package org.mint.android
+package com.ing.mint.android
 
+import com.ing.mint.android.rule.BasicRules
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.android.xml.hasNS
+import com.ing.mint.android.xml.parent
 import org.junit.Assert
 import org.junit.Test
-import org.mint.android.rule.BasicRules
-import org.mint.android.xml.attribute
-import org.mint.android.xml.hasNS
-import org.mint.android.xml.parent
 
 class InMemoryRepositoryTest : StateBuilder {
     private val xml: String = """
@@ -13,9 +13,9 @@ class InMemoryRepositoryTest : StateBuilder {
               <View class="android.view.ViewStub" id="16908719" resourceName="action_mode_bar_stub" package="android"/>
               <View class="androidx.appcompat.widget.ContentFrameLayout" id="16908290" resourceName="content" package="android">
                 <View class="android.widget.LinearLayout">
-                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="org.mint.exampleapp" isClickable="true" isDisplayed="true"/>
-                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
+                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="com.ing.mint.exampleapp" isClickable="true" isDisplayed="true"/>
+                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
                 </View>
               </View>
             </View>

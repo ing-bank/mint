@@ -1,7 +1,7 @@
-package org.mint.espressoRunner.state.attributes
+package com.ing.mint.espressoRunner.state.attributes
 
 import androidx.recyclerview.widget.RecyclerView
-import org.mint.espressoRunner.state.ViewVisibilityPredicate
+import com.ing.mint.espressoRunner.state.ViewVisibilityPredicate
 import org.w3c.dom.Element
 
 data class RecyclerViewAttributes(val viewVisibilityPredicate: ViewVisibilityPredicate) {

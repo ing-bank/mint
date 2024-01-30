@@ -1,4 +1,4 @@
-package org.mint.util
+package com.ing.mint.util
 
 object MapUtil {
     // getOrDefault exists from api lvl 24 onwards, we are at 21. Don't bump the project dependency

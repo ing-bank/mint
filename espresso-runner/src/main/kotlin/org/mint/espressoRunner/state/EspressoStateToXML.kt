@@ -1,12 +1,12 @@
-package org.mint.espressoRunner.state
+package com.ing.mint.espressoRunner.state
 
 import android.content.res.Resources
 import android.view.View
 import android.view.ViewGroup
-import org.mint.android.AndroidStateUtils
-import org.mint.espressoRunner.state.attributes.ViewAttributes
-import org.mint.espressoRunner.state.attributes.ViewGroupAttributes
-import org.mint.espressoRunner.state.attributes.WindowAttributes
+import com.ing.mint.android.AndroidStateUtils
+import com.ing.mint.espressoRunner.state.attributes.ViewAttributes
+import com.ing.mint.espressoRunner.state.attributes.ViewGroupAttributes
+import com.ing.mint.espressoRunner.state.attributes.WindowAttributes
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 import org.w3c.dom.Node

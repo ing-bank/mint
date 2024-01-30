@@ -1,4 +1,4 @@
-package org.mint.android.state
+package com.ing.mint.android.state
 
 import android.os.Environment
 import androidx.test.espresso.Espresso.onView
@@ -8,13 +8,13 @@ import androidx.test.espresso.matcher.ViewMatchers.isRoot
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.ing.mint.android.AndroidStateUtils
+import com.ing.mint.espressoRunner.state.Screenshot
+import com.ing.mint.testapp.TestActivity
 import junit.framework.Assert.fail
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mint.android.AndroidStateUtils
-import org.mint.espressoRunner.state.Screenshot
-import org.mint.testapp.TestActivity
 import org.w3c.dom.Node
 import java.io.File
 import java.io.FileOutputStream

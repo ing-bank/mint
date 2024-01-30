@@ -1,8 +1,8 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
+import com.ing.mint.android.StateTest
 import org.junit.Assert
 import org.junit.Test
-import org.mint.android.StateTest
 
 class ItemWithTagClickRuleTest : StateTest() {
     override val widgetTreeXML: String = """

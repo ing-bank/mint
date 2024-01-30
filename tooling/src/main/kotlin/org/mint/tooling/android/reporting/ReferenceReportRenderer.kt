@@ -1,11 +1,11 @@
-package org.mint.tooling.android.reporting
+package com.ing.mint.tooling.android.reporting
 
+import com.ing.mint.android.AndroidStateUtils
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.android.xml.children
+import com.ing.mint.tooling.android.reporting.VerdictUtil.countVerdicts
+import com.ing.mint.util.MapUtil.getOrDefaultExt
 import org.gradle.api.logging.Logger
-import org.mint.android.AndroidStateUtils
-import org.mint.android.xml.attribute
-import org.mint.android.xml.children
-import org.mint.tooling.android.reporting.VerdictUtil.countVerdicts
-import org.mint.util.MapUtil.getOrDefaultExt
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 import org.w3c.dom.Node

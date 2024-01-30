@@ -1,4 +1,4 @@
-package org.mint.lib
+package com.ing.mint.lib
 
 import java.math.BigDecimal
 

@@ -1,4 +1,4 @@
-package org.mint.android.base64
+package com.ing.mint.android.base64
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest

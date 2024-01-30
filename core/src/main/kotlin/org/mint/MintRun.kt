@@ -1,7 +1,7 @@
-package org.mint
+package com.ing.mint
 
-import org.mint.lib.RunContext
-import org.mint.lib.SUTState
+import com.ing.mint.lib.RunContext
+import com.ing.mint.lib.SUTState
 
 interface MintRun<S : SUTState<S>> {
     fun ctx(): RunContext<S>

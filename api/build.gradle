@@ -11,7 +11,7 @@ plugins {
 }
 
 android {
-    namespace = 'org.mint.android'
+    namespace = 'com.ing.mint.android'
     compileSdk 32
 
     defaultConfig {
@@ -63,7 +63,7 @@ android {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'org.mint'
+            groupId = 'com.ing.mint'
             artifactId = 'android'
             version = mintVersion
 

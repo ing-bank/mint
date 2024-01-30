@@ -1,11 +1,11 @@
-package org.mint.api
+package com.ing.mint.api
 
-import org.mint.StateRepository
-import org.mint.android.AndroidState
-import org.mint.android.AndroidStateUtils
-import org.mint.android.InMemoryRepository
-import org.mint.android.StateBuilder
-import org.mint.lib.Query
+import com.ing.mint.StateRepository
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.AndroidStateUtils
+import com.ing.mint.android.InMemoryRepository
+import com.ing.mint.android.StateBuilder
+import com.ing.mint.lib.Query
 import javax.xml.transform.Transformer
 
 /**

@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.actions
+package com.ing.mint.espressoRunner.actions
 
 import androidx.test.platform.app.InstrumentationRegistry
 

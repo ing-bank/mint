@@ -1,8 +1,8 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.AndroidStateUtils
 import net.sf.saxon.value.NumericValue
-import org.mint.android.AndroidState
-import org.mint.android.AndroidStateUtils
 import java.math.BigDecimal
 
 data class XQueryPriority(val xquery: String) : (AndroidState) -> BigDecimal {

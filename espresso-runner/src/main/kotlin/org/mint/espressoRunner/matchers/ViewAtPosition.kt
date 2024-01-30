@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.matchers
+package com.ing.mint.espressoRunner.matchers
 
 import android.view.View
 import android.view.ViewGroup

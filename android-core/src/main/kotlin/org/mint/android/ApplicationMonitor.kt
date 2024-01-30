@@ -1,4 +1,4 @@
-package org.mint.android
+package com.ing.mint.android
 
 /**
  * Monitors the SUT of relevant changes for the whole the execution of the MINT test.

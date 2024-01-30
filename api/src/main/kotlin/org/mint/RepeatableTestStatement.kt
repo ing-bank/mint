@@ -1,4 +1,4 @@
-package org.mint
+package com.ing.mint
 
 import org.junit.runners.model.Statement
 

@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.view
+package com.ing.mint.espressoRunner.view
 
 import android.view.View
 import com.google.android.apps.common.testing.accessibility.framework.ViewAccessibilityUtils

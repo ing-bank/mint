@@ -1,4 +1,4 @@
-package org.mint.espressoRunner.state.attributes
+package com.ing.mint.espressoRunner.state.attributes
 
 import android.view.View
 import android.view.WindowManager

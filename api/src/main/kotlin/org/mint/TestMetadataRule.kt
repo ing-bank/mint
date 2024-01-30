@@ -1,9 +1,9 @@
-package org.mint
+package com.ing.mint
 
+import com.ing.mint.android.TestMetadata
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
-import org.mint.android.TestMetadata
 
 class TestMetadataRule : TestRule {
     private var metadata: TestMetadata? = null

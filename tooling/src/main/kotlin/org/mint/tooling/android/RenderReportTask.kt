@@ -1,13 +1,13 @@
-package org.mint.tooling.android
+package com.ing.mint.tooling.android
 
+import com.ing.mint.android.NaivePersistentRepository
+import com.ing.mint.tooling.android.reporting.ReferenceReportRenderer
+import com.ing.mint.tooling.android.reporting.ReportRenderer
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.options.Option
-import org.mint.android.NaivePersistentRepository
-import org.mint.tooling.android.reporting.ReferenceReportRenderer
-import org.mint.tooling.android.reporting.ReportRenderer
 import java.io.File
 
 open class RenderReportTask : DefaultTask() {

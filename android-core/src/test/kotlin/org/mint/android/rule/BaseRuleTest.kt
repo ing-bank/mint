@@ -1,12 +1,12 @@
-package org.mint.android.rule
+package com.ing.mint.android.rule
 
+import com.ing.mint.android.Action
+import com.ing.mint.android.AndroidConstants
+import com.ing.mint.android.AndroidState
+import com.ing.mint.android.StateTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.mint.android.Action
-import org.mint.android.AndroidConstants
-import org.mint.android.AndroidState
-import org.mint.android.StateTest
 import org.w3c.dom.Element
 
 class BaseRuleTest : StateTest() {
@@ -15,9 +15,9 @@ class BaseRuleTest : StateTest() {
               <View class="android.view.ViewStub" id="16908719" resourceName="action_mode_bar_stub" package="android"/>
               <View class="androidx.appcompat.widget.ContentFrameLayout" id="16908290" resourceName="content" package="android">
                 <View class="android.widget.LinearLayout">
-                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="org.mint.exampleapp"/>
-                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="org.mint.exampleapp"/>
-                  <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="org.mint.exampleapp"/>
+                  <View class="com.google.android.material.button.MaterialButton" id="2131230819" resourceName="button2" package="com.ing.mint.exampleapp"/>
+                  <View class="com.google.android.material.textview.MaterialTextView" id="2131231165" resourceName="textView2" package="com.ing.mint.exampleapp"/>
+                  <View class="androidx.appcompat.widget.AppCompatEditText" id="2131230898" resourceName="editTextNumber2" package="com.ing.mint.exampleapp"/>
                 </View>
               </View>
             </View>

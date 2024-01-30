@@ -1,9 +1,9 @@
-package org.mint.android
+package com.ing.mint.android
 
-import org.mint.StateRepository
-import org.mint.lib.Oracle
-import org.mint.lib.Rule
-import org.mint.lib.RunContext
+import com.ing.mint.StateRepository
+import com.ing.mint.lib.Oracle
+import com.ing.mint.lib.Rule
+import com.ing.mint.lib.RunContext
 import org.w3c.dom.Document
 import org.w3c.dom.Node
 

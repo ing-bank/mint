@@ -1,12 +1,12 @@
-package org.mint.junit.runner
+package com.ing.mint.junit.runner
 
+import com.ing.mint.MINTRule
 import org.junit.Rule
 import org.junit.rules.TestRule
 import org.junit.runner.Runner
 import org.junit.runners.Suite
 import org.junit.runners.model.TestClass
 import org.junit.runners.parameterized.TestWithParameters
-import org.mint.MINTRule
 
 @Suppress("unused")
 class MintClassRunner(testClass: Class<*>?) : Suite(testClass, runners(testClass)) {

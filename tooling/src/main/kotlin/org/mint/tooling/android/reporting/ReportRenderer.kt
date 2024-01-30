@@ -1,9 +1,9 @@
-package org.mint.tooling.android.reporting
+package com.ing.mint.tooling.android.reporting
 
+import com.ing.mint.android.xml.attribute
+import com.ing.mint.tooling.android.RenderReportTask
 import net.sf.saxon.TransformerFactoryImpl
 import org.gradle.api.logging.Logger
-import org.mint.android.xml.attribute
-import org.mint.tooling.android.RenderReportTask
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 import java.io.BufferedInputStream

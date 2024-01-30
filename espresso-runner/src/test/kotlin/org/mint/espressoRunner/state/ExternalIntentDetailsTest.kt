@@ -1,12 +1,12 @@
-package org.mint.espressoRunner.state
+package com.ing.mint.espressoRunner.state
 
 import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import androidx.test.espresso.intent.VerifiableIntent
+import com.ing.mint.android.xml.attribute
 import junit.framework.Assert.assertEquals
 import org.hamcrest.Matcher
 import org.junit.Test
-import org.mint.android.xml.attribute
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import org.w3c.dom.Element
